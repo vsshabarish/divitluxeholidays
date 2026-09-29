@@ -371,28 +371,7 @@
         <h2 class="headline fade-in">Something Extraordinary is Coming</h2>
         <p class="subtext fade-in">Our website is being crafted — we'll see you very soon</p>
 
-        <div class="countdown fade-in" id="countdown" aria-label="Countdown to launch">
-            <div class="countdown-item">
-                <span class="countdown-number" id="days">--</span>
-                <span class="countdown-label">Days</span>
-            </div>
-            <span class="countdown-separator">:</span>
-            <div class="countdown-item">
-                <span class="countdown-number" id="hours">--</span>
-                <span class="countdown-label">Hours</span>
-            </div>
-            <span class="countdown-separator">:</span>
-            <div class="countdown-item">
-                <span class="countdown-number" id="minutes">--</span>
-                <span class="countdown-label">Minutes</span>
-            </div>
-            <span class="countdown-separator">:</span>
-            <div class="countdown-item">
-                <span class="countdown-number" id="seconds">--</span>
-                <span class="countdown-label">Seconds</span>
-            </div>
-        </div>
-
+        
         <div class="divider fade-in"></div>
 
         <p class="notify-text fade-in">Be the first to know when we launch</p>
@@ -416,35 +395,7 @@
     </div>
 
     <script>
-        // Countdown to October 20, 2026
-        const launchDate = new Date('2026-10-20T00:00:00').getTime();
-
-        function updateCountdown() {
-            const now = new Date().getTime();
-            const gap = launchDate - now;
-
-            if (gap <= 0) {
-                document.getElementById('days').textContent = '0';
-                document.getElementById('hours').textContent = '0';
-                document.getElementById('minutes').textContent = '0';
-                document.getElementById('seconds').textContent = '0';
-                return;
-            }
-
-            const days = Math.floor(gap / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((gap % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((gap % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((gap % (1000 * 60)) / 1000);
-
-            document.getElementById('days').textContent = days;
-            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
-            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
-            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
-        }
-
-        updateCountdown();
-        setInterval(updateCountdown, 1000);
-
+        
         // Form handler with Formspree
         function handleSubmit(e) {
             e.preventDefault();
