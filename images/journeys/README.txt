@@ -1,1 +1,1 @@
-
+DIVIT LUXE journey images
