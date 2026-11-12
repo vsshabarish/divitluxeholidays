@@ -13,8 +13,38 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap');
 :root{--navy:#091426;--navy2:#102039;--gold:#b89458;--gold2:#dfc38f;--ivory:#f4f1e9;--ink:#172235;--muted:#aeb6c2;--serif:'Cormorant Garamond',Georgia,serif;--sans:'Montserrat',Arial,sans-serif}
 *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;scroll-padding-top:76px}body{background:var(--navy);color:#fff;font-family:var(--sans);font-size:13px;line-height:1.65;overflow-x:hidden}a{color:inherit;text-decoration:none}img{display:block;max-width:100%}.container{width:min(1120px,90%);margin:0 auto}
-.site-header{height:76px;position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid rgba(184,148,88,.28)}.nav-wrap{height:100%;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;width:min(390px,42%);height:66px}.brand img{width:100%;height:62px;object-fit:contain;object-position:left center}.nav-links{display:flex;align-items:center;gap:22px}.nav-links a{font-size:9px;letter-spacing:1px;text-transform:uppercase;color:#172235;white-space:nowrap}.nav-links a:hover{color:#98733d}.nav-links .nav-cta{padding:10px 14px;border:1px solid var(--gold);color:#87652f}.menu-toggle{display:none;background:none;border:0;color:var(--navy);font-size:25px}
-.hero{height:min(590px,calc(100svh - 76px));min-height:450px;max-height:590px;position:relative;display:flex;align-items:center;background:url('images/hero-homepage.webp') center 52%/cover no-repeat}.hero-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,13,25,.88),rgba(5,13,25,.56) 53%,rgba(5,13,25,.12)),linear-gradient(0deg,rgba(5,13,25,.28),transparent 55%)}.hero-content{position:relative;z-index:1;padding-top:5px}.eyebrow{font-size:9px;letter-spacing:2.6px;font-weight:600;color:var(--gold);text-transform:uppercase;margin-bottom:14px}.hero h1,h2{font-family:var(--serif);font-weight:400;line-height:1.02;letter-spacing:-.7px}.hero h1{font-size:clamp(50px,6.2vw,78px);max-width:760px}.hero h1 em,h2 em{font-weight:400;color:var(--gold2)}.hero-copy{max-width:480px;color:#e2e4e8;font-size:12px;line-height:1.9;margin:18px 0 24px}.btn{display:inline-flex;align-items:center;gap:15px;padding:13px 19px;font-size:9px;letter-spacing:1.3px;text-transform:uppercase;font-weight:600;white-space:nowrap;transition:.2s}.btn-gold{background:var(--gold);border:1px solid var(--gold);color:#101a2a}.btn-gold:hover{background:var(--gold2)}.btn-dark{background:var(--navy);color:var(--gold2);border:1px solid var(--navy)}.btn-outline{border:1px solid var(--gold);color:var(--gold2)}.btn-outline:hover{background:var(--gold);color:var(--navy)}.hero-caption{position:absolute;right:5%;bottom:22px;font-size:8px;letter-spacing:2px;color:#e6e0d4}
+.site-header{height:76px;position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid rgba(184,148,88,.28)}
+
+.nav-links{display:flex;align-items:center;gap:22px}
+.nav-links a,.nav-dropdown-toggle{
+  color:#172235;
+  font-family:var(--sans);
+  font-size:10px;
+  font-weight:500;
+  letter-spacing:1.25px;
+  line-height:1.2;
+  text-transform:uppercase;
+  white-space:nowrap;
+}
+.nav-links a:hover,.nav-links a.active,.nav-dropdown-toggle:hover,
+.nav-dropdown.open .nav-dropdown-toggle{color:#98733d}
+.nav-dropdown-toggle{
+  appearance:none;background:transparent;border:0;padding:10px 0;
+  cursor:pointer;display:inline-flex;align-items:center;gap:10px;
+  transition:color .2s ease;
+}
+.nav-dropdown-toggle .nav-chevron{
+  display:inline-block;width:7px;height:7px;flex:0 0 7px;
+  border-right:1.4px solid #98733d;border-bottom:1.4px solid #98733d;
+  transform:translateY(-2px) rotate(45deg);
+  transition:transform .2s ease;
+}
+.nav-dropdown.open .nav-dropdown-toggle .nav-chevron{
+  transform:translateY(2px) rotate(225deg);
+}
+
+.nav-wrap{height:100%;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;width:min(390px,42%);height:66px}.brand img{width:100%;height:62px;object-fit:contain;object-position:left center}.nav-links a:hover{color:#98733d}.nav-links .nav-cta{padding:10px 14px;border:1px solid var(--gold);color:#87652f}.menu-toggle{display:none;background:none;border:0;color:var(--navy);font-size:25px}
+.hero{height:min(590px,calc(100svh - 76px));min-height:450px;max-height:590px;position:relative;display:flex;align-items:center;background:url('images/hero-homepage-mountains.webp') center 52%/cover no-repeat}.hero-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,13,25,.88),rgba(5,13,25,.56) 53%,rgba(5,13,25,.12)),linear-gradient(0deg,rgba(5,13,25,.28),transparent 55%)}.hero-content{position:relative;z-index:1;padding-top:5px}.eyebrow{font-size:9px;letter-spacing:2.6px;font-weight:600;color:var(--gold);text-transform:uppercase;margin-bottom:14px}.hero h1,h2{font-family:var(--serif);font-weight:400;line-height:1.02;letter-spacing:-.7px}.hero h1{font-size:clamp(50px,6.2vw,78px);max-width:760px}.hero h1 em,h2 em{font-weight:400;color:var(--gold2)}.hero-copy{max-width:480px;color:#e2e4e8;font-size:12px;line-height:1.9;margin:18px 0 24px}.btn{display:inline-flex;align-items:center;gap:15px;padding:13px 19px;font-size:9px;letter-spacing:1.3px;text-transform:uppercase;font-weight:600;white-space:nowrap;transition:.2s}.btn-gold{background:var(--gold);border:1px solid var(--gold);color:#101a2a}.btn-gold:hover{background:var(--gold2)}.btn-dark{background:var(--navy);color:var(--gold2);border:1px solid var(--navy)}.btn-outline{border:1px solid var(--gold);color:var(--gold2)}.btn-outline:hover{background:var(--gold);color:var(--navy)}.hero-caption{position:absolute;right:5%;bottom:22px;font-size:8px;letter-spacing:2px;color:#e6e0d4}
 .journeys{background:var(--ivory);color:var(--ink);padding:48px 0 54px}.section-heading{display:flex;align-items:end;justify-content:space-between;gap:35px;margin-bottom:25px}.section-heading h2,.why h2,.enquire h2{font-size:clamp(36px,4.1vw,49px)}.section-heading h2 em{color:#9b7947}.section-heading>p{max-width:390px;color:#626a75;font-size:11px;line-height:1.8}.gold{color:#9b7947}.journey-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.journey-card{height:245px;min-width:0;position:relative;overflow:hidden;background:#15243a;color:#fff}.journey-card img{width:100%;height:100%;object-fit:cover;transition:transform .55s}.journey-card:hover img{transform:scale(1.055)}.card-shade{position:absolute;inset:0;background:linear-gradient(0deg,rgba(4,12,24,.88),rgba(4,12,24,.02) 72%)}.card-number{position:absolute;top:13px;left:15px;color:#f2d9a9;font-size:9px;letter-spacing:1px}.journey-title{position:absolute;left:17px;right:12px;bottom:43px;font:500 clamp(22px,2.4vw,30px)/.98 var(--serif)}.journey-title em{color:var(--gold2);font-style:normal}.card-link{position:absolute;left:17px;bottom:16px;color:#f2d9a9;font-size:8px;letter-spacing:1.3px}
 .why{background:var(--navy);padding:48px 0 52px}.why-inner{display:grid;grid-template-columns:.9fr 1.1fr;align-items:center;gap:8%}.why-heading h2{font-size:clamp(37px,4.1vw,50px)}.why-points{display:grid;grid-template-columns:1fr;gap:13px}.why-points article{display:grid;grid-template-columns:34px 1fr;gap:14px;align-items:start;border-bottom:1px solid rgba(223,195,143,.2);padding:0 0 12px}.why-points article:last-child{border:0;padding-bottom:0}.why-points article>span{font:21px var(--serif);color:var(--gold2)}.why-points h3{font:500 21px var(--serif);margin-bottom:2px}.why-points p{font-size:10px;color:var(--muted);line-height:1.7}
 .groups{background:var(--navy2);padding:28px 0}.group-banner{min-height:120px;border:1px solid rgba(184,148,88,.45);background:linear-gradient(105deg,#142944,#0c192d);padding:20px 25px;display:grid;grid-template-columns:65px 1fr auto;align-items:center;gap:22px}.group-symbol{height:56px;width:56px;border:1px solid var(--gold);display:grid;place-items:center;color:var(--gold2);font:30px var(--serif)}.group-copy .eyebrow{margin-bottom:4px;font-size:8px}.group-copy h2{font-size:30px}.group-copy p:last-child{font-size:10px;color:#c0c7d0;margin-top:4px}
@@ -550,7 +580,7 @@
   align-items:center;
   text-align:center;
   color:#fff;
-  background-image:url('images/hero-homepage.webp');
+  background-image:url('images/hero-homepage-mountains.webp');
   background-size:cover;
   background-position:center 54%;
 }
@@ -651,7 +681,7 @@
 
   
 /* Final review refinements */
-.hero{background-image:url('images/hero-homepage.webp')!important;background-position:center 48%}
+.hero{background-image:url('images/hero-homepage-mountains.webp')!important;background-position:center 48%}
 .hero-with-form .hero-layout{gap:4.5%;grid-template-columns:1fr .78fr}
 .hero-form-card{max-width:440px;justify-self:end}
 .featured{background:#f7f3eb;color:#14233d;padding:48px 0 52px}
@@ -911,7 +941,62 @@ html{scroll-padding-top:84px}
 }
 
 </style>
-</head>
+
+<style>
+/* DIVIT LUXE navigation dropdown and homepage hero refinements */
+.nav-dropdown{position:relative;display:flex;align-items:center}
+
+.nav-dropdown-toggle:hover,.nav-dropdown.open .nav-dropdown-toggle{color:#98733d}
+.nav-dropdown-toggle .nav-chevron{width:7px;height:7px;border-right:1.4px solid #98733d;border-bottom:1.4px solid #98733d;transform:translateY(-2px) rotate(45deg);transition:transform .2s ease}
+.nav-dropdown.open .nav-dropdown-toggle .nav-chevron{transform:translateY(2px) rotate(225deg)}
+.nav-dropdown-menu{display:none;position:absolute;z-index:100;top:100%;left:-14px;min-width:225px;padding:8px 0;background:#fff;border:1px solid rgba(184,148,88,.28);box-shadow:0 12px 28px rgba(8,20,38,.14)}
+.nav-dropdown:hover .nav-dropdown-menu,.nav-dropdown:focus-within .nav-dropdown-menu,.nav-dropdown.open .nav-dropdown-menu{display:block}
+.nav-dropdown-menu a{display:block;padding:11px 16px!important;font-size:9px!important;letter-spacing:.8px!important;color:#172235;text-decoration:none}
+.nav-dropdown-menu a:hover,.nav-dropdown-menu a.active{background:#f6f1e8;color:#98733d}
+.hero-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:26px}
+.hero-actions .btn{margin:0}
+.hero-actions .btn-outline{border:1px solid rgba(223,195,143,.9);color:#fff;background:rgba(8,20,38,.18)}
+.whatsapp-float svg{width:25px;height:25px;display:block}
+@media(max-width:900px){.nav-dropdown-toggle{font-size:10px;letter-spacing:1px}}
+@media(max-width:680px){
+ .nav-dropdown{display:block;width:100%}
+ .nav-dropdown-toggle{width:100%;text-align:left;padding:11px 0;font-size:10px}
+ .nav-dropdown-menu{position:static;min-width:0;border:0;border-left:2px solid #c4a064;box-shadow:none;padding:0 0 4px 10px;margin:0 0 5px 4px}
+ .nav-dropdown-menu a{padding:9px 12px!important;font-size:9px!important}
+ .nav-dropdown.open .nav-dropdown-menu{display:block}
+ .hero-actions{gap:9px;margin-top:21px}
+ .hero-actions .btn{padding:12px 13px;font-size:8px;letter-spacing:.8px}
+}
+</style>
+<script>
+document.addEventListener("DOMContentLoaded",function(){
+  document.querySelectorAll(".nav-dropdown-toggle").forEach(function(toggle){
+    toggle.addEventListener("click",function(){
+      var parent=toggle.closest(".nav-dropdown");
+      var isOpen=parent.classList.toggle("open");
+      toggle.setAttribute("aria-expanded",isOpen?"true":"false");
+    });
+  });
+  var menuButton=document.querySelector(".menu-toggle");
+  var nav=document.querySelector(".nav-links");
+  if(menuButton&&nav){
+    menuButton.addEventListener("click",function(){
+      var open=nav.classList.toggle("open");
+      menuButton.setAttribute("aria-expanded",open?"true":"false");
+    });
+  }
+});
+</script>
+<style>
+/* Homepage hero now uses the full text width and paired journey actions */
+.hero-layout{display:block!important;height:auto!important;position:relative;z-index:1}
+.hero-content{max-width:700px!important}
+.hero .hero-copy{max-width:560px}
+@media(max-width:680px){.hero{height:64svh;min-height:440px;max-height:560px}.hero-content{max-width:100%!important}}
+/* Updated homepage-only hero photograph. Upload hero-homepage-cappadocia.webp to the repository's images/ folder. */
+.hero{background-image:url('images/hero-homepage-mountains.webp')!important;background-position:center 54%!important;background-size:cover!important}
+@media(max-width:680px){.hero{background-position:57% center!important}}
+</style></head>
 <body>
 <header class="site-header">
   <div class="container nav-wrap">
@@ -921,10 +1006,17 @@ html{scroll-padding-top:84px}
     <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button>
     <nav class="nav-links" aria-label="Main navigation">
       <a href="#home">Home</a>
-      <a href="#journeys">Our Journeys</a>
-      <a href="domestic-holidays.html">Domestic Journeys</a>
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-toggle" type="button" aria-expanded="false">Our Journeys <span class="nav-chevron" aria-hidden="true"></span></button>
+        <div class="nav-dropdown-menu">
+          <a href="domestic-holidays.html">Domestic Journeys</a>
+              <a href="international-holidays.html">International Escapes</a>
+          <a href="pilgrimage.html">Pilgrimage Journeys</a>
+          <a href="helicopter-yatra.html">Helicopter Yatra</a>
+          <a href="group-departures.html">Group Departures</a>
+        </div>
+      </div>
       <a href="#why-divit">Why Divit Luxe</a>
-      <a href="#journeys">Group Departures</a>
       <a class="nav-cta" href="https://wa.me/918074061235" data-wa-journey="General Travel Enquiry" target="_blank" rel="noopener">Plan My Journey</a>
     </nav>
   </div>
@@ -932,28 +1024,19 @@ html{scroll-padding-top:84px}
 
 <main>
   <!-- 01: Hero with homepage enquiry form -->
-  <section class="hero hero-with-form" id="home">
+  <section class="hero" id="home">
     <div class="hero-shade"></div>
     <div class="container hero-layout">
       <div class="hero-content">
         <p class="eyebrow">WELCOME TO DIVIT LUXE HOLIDAYS</p>
-        <h1>Curating Unforgettable<br><em>Travel Experiences</em></h1>
-        <p class="hero-copy">From serene escapes and meaningful pilgrimages to helicopter journeys and bespoke holidays — we bring thoughtful travel experiences together, around you.</p>
-        <a class="btn btn-gold" href="#journeys">Explore Journeys <span>↗</span></a>
-      </div>
-      <div class="hero-form-card whatsapp-enquiry-card" id="enquire">
-        <div class="wa-card-icon" aria-hidden="true">✆</div>
-        <p class="wa-card-kicker">A PERSONAL TRAVEL CONVERSATION</p>
-        <h2>Let's Plan Your Journey</h2>
-        <p class="form-intro">Tell us what you have in mind. Connect with our travel team directly on WhatsApp and let us take it from there.</p>
-        <a class="btn btn-gold wa-primary" href="https://wa.me/918074061235" data-wa-journey="General Travel Enquiry" target="_blank" rel="noopener">
-          <span class="wa-icon" aria-hidden="true">✆</span> Enquire on WhatsApp <span>↗</span>
-        </a>
-        <div class="wa-card-details">
-          <span>Quick, personal assistance</span>
-          <span>+91 80 740 61235</span>
+        <h1>Journeys Beyond the <em>Ordinary.</em></h1>
+        <p class="hero-copy">Discover thoughtfully curated holidays, meaningful pilgrimages and extraordinary experiences across India and the world.</p>
+        <div class="hero-actions">
+          <a class="btn btn-gold" href="#journeys">Explore Journeys <span>↗</span></a>
+          <a class="btn btn-outline" href="https://wa.me/918074061235?text=Hello%20DIVIT%20LUXE%20HOLIDAYS%2C%20I%20would%20like%20to%20plan%20a%20journey." target="_blank" rel="noopener">
+            Plan My Journey <span aria-hidden="true">↗</span>
+          </a>
         </div>
-        <p class="form-footnote">WhatsApp opens with your enquiry message ready to send. You remain in control of what you share.</p>
       </div>
     </div>
     <div class="hero-caption">CURATED JOURNEYS. EXTRAORDINARY EXPERIENCES.</div>
@@ -992,11 +1075,11 @@ html{scroll-padding-top:84px}
           <span class="card-shade"></span><span class="card-number">05</span>
           <span class="journey-title">Group <em>Departures</em></span><span class="card-link">TRAVEL TOGETHER ↗</span>
         </a>
-        <a class="journey-card" href="https://wa.me/918074061235" data-wa-journey="Customised Journey" target="_blank" rel="noopener">
+        <a class="journey-card" href="https://wa.me/918074061235" data-wa-journey="Customise Journey" target="_blank" rel="noopener">
           <img src="images/journeys/customised-journey.webp" alt="Scenic coastal road illustrating a tailor-made holiday" loading="lazy">
           <span class="card-shade"></span>
           <span class="card-number">06</span>
-          <span class="journey-title">Customised <em>Journey</em></span>
+          <span class="journey-title">Customise <em>Journey</em></span>
           <span class="card-link">DESIGN YOUR JOURNEY ↗</span>
         </a>
       </div>
@@ -1113,16 +1196,18 @@ html{scroll-padding-top:84px}
     <span>Curated Journeys. Extraordinary Experiences.</span>
   </div>
 </footer>
-<a class="whatsapp-float" href="https://wa.me/918074061235" data-wa-journey="General Travel Enquiry" target="_blank" rel="noopener" aria-label="Enquire with DIVIT LUXE on WhatsApp" title="Enquire on WhatsApp">✆</a>
+<a class="whatsapp-float" href="https://wa.me/918074061235" data-wa-journey="General Travel Enquiry" target="_blank" rel="noopener" aria-label="Enquire with DIVIT LUXE on WhatsApp" title="Enquire on WhatsApp">
+  <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16.02 3.2A12.65 12.65 0 0 0 5.1 22.22L3.35 28.6l6.55-1.72A12.7 12.7 0 1 0 16.02 3.2Zm0 23.1c-1.92 0-3.8-.52-5.45-1.5l-.39-.23-3.88 1.02 1.04-3.78-.25-.4a10.46 10.46 0 1 1 8.93 4.9Zm5.74-7.83c-.31-.16-1.83-.9-2.11-1-.28-.1-.49-.16-.7.16-.2.31-.8 1-1 1.2-.18.2-.36.23-.67.08-.31-.16-1.3-.48-2.48-1.52-.92-.82-1.54-1.83-1.72-2.14-.18-.31-.02-.48.14-.64.14-.14.31-.36.46-.54.16-.18.21-.31.31-.52.1-.2.05-.39-.03-.55-.08-.15-.7-1.68-.96-2.3-.25-.6-.5-.52-.7-.53h-.6c-.2 0-.54.08-.82.39-.28.31-1.08 1.05-1.08 2.56s1.11 2.97 1.26 3.18c.15.2 2.18 3.33 5.28 4.67.74.32 1.32.51 1.77.65.74.24 1.41.2 1.94.12.59-.09 1.83-.75 2.09-1.48.26-.73.26-1.36.18-1.49-.08-.13-.28-.2-.59-.36Z"/></svg>
+</a>
 
 <script>
 document.getElementById("year").textContent=new Date().getFullYear();
 (function(){
   const phone = "918074061235";
-  const message = "Hello DIVIT LUXE HOLIDAYS, I would like to plan a journey.";
-  const whatsappUrl = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
   document.querySelectorAll("[data-wa-journey]").forEach(function(link){
-    link.href = whatsappUrl;
+    const journey = link.getAttribute("data-wa-journey") || "General Travel Enquiry";
+    const message = "Hello DIVIT LUXE HOLIDAYS, I would like to enquire about " + journey + ".";
+    link.href = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
   });
 })();
 </script>
