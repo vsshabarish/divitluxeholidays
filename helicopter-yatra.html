@@ -858,6 +858,62 @@
 @media(max-width:900px){.heli-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.benefit-grid{grid-template-columns:repeat(2,1fr)}.benefit:nth-child(2){border-right:0}}
 @media(max-width:600px){.hero{min-height:370px;background-position:58% center}.hero-content{padding:48px 0}.hero h1{font-size:51px}.benefit-grid{grid-template-columns:1fr 1fr;gap:6px}.benefit{padding:8px 4px;border-right:0;border-bottom:1px solid #eee6da}.benefit strong{font-size:14px}.section{padding:37px 0}.heli-grid{grid-template-columns:1fr;gap:14px}.heli-card{display:grid;grid-template-columns:38% 1fr}.heli-card>img{height:100%;min-height:230px}.heli-card-body{padding:13px}.heli-card h3{font-size:22px}.closing-inner{display:block}.closing .btn{margin-top:17px}}
 @media(max-width:390px){.heli-card{grid-template-columns:1fr}.heli-card>img{height:190px;min-height:0}}
+
+/* FINAL GRID FIX — remove legacy card spanning and keep every card equal-width */
+#experiences .destination-grid{
+  display:grid!important;
+  grid-template-columns:repeat(4,minmax(0,1fr))!important;
+  align-items:stretch!important;
+  gap:22px!important;
+}
+#experiences .destination-card,
+#experiences .destination-card:nth-child(4),
+#experiences .destination-card:nth-child(5){
+  grid-column:auto!important;
+  width:100%!important;
+  min-width:0!important;
+  max-width:none!important;
+  display:flex!important;
+  flex-direction:column!important;
+}
+#experiences .destination-image{width:100%!important;aspect-ratio:1.85/1!important;height:auto!important;min-height:0!important}
+#experiences .destination-image img{width:100%!important;height:100%!important;object-fit:cover!important}
+#experiences .destination-body{display:flex!important;flex:1 1 auto!important;flex-direction:column!important}
+#experiences .destination-actions{display:grid!important;grid-template-columns:1fr 1fr!important;gap:9px!important;margin-top:auto!important;align-items:stretch!important}
+#experiences .view-itinerary,#experiences .card-journey-cta{width:100%!important;min-width:0!important;min-height:44px!important;margin:0!important;box-sizing:border-box!important}
+@media(min-width:761px) and (max-width:1200px){
+  #experiences .destination-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:18px!important}
+}
+@media(max-width:760px){
+  #experiences .destination-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:12px!important}
+  #experiences .destination-card,#experiences .destination-card:nth-child(4),#experiences .destination-card:nth-child(5){grid-column:auto!important}
+  #experiences .destination-body{padding:12px!important}
+  #experiences .destination-body h3{min-height:0!important}
+  #experiences .destination-intro{min-height:0!important}
+}
+@media(max-width:480px){
+  #experiences .destination-grid{grid-template-columns:1fr!important}
+}
+
+/* Mobile parity with Domestic and International pages: always two equal cards per row */
+@media (max-width: 760px) {
+  #experiences .destination-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+  #experiences .destination-card,
+  #experiences .destination-card:nth-child(4),
+  #experiences .destination-card:nth-child(5) {
+    grid-column: auto !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+  }
+}
+@media (max-width: 480px) {
+  #experiences .destination-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
 </style></head><body>
 <header class="site-header">
   <div class="container nav-wrap">
