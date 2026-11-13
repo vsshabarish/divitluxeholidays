@@ -1046,7 +1046,24 @@ document.addEventListener("DOMContentLoaded",function(){
  .site-header .nav-dropdown:not(.open) .nav-dropdown-menu{display:none}
  .site-header .nav-dropdown.open .nav-dropdown-menu{display:block}
 }
-</style></head>
+</style><style>
+/* Shared DIVIT LUXE header / mobile navigation refinement */
+.site-header{height:78px!important;position:sticky!important;top:0!important;z-index:100!important;background:#fff!important;border-bottom:1px solid rgba(185,149,91,.28)!important;box-shadow:0 3px 14px rgba(10,22,40,.05)!important}
+.site-header .nav-wrap{height:100%!important;width:min(1160px,92%)!important;margin:0 auto!important;display:flex!important;align-items:center!important;justify-content:space-between!important;gap:20px!important}
+.site-header .brand{width:min(300px,28%)!important;max-width:300px!important;height:68px!important;flex:0 1 300px!important;display:flex!important;align-items:center!important}
+.site-header .brand img{width:100%!important;height:62px!important;max-height:62px!important;object-fit:contain!important;object-position:left center!important}
+.site-header .nav-links{display:flex!important;align-items:center!important;gap:clamp(10px,1.4vw,20px)!important;position:static!important;padding:0!important;background:#fff!important;box-shadow:none!important;border:0!important}
+.site-header .nav-links>a,.site-header .nav-dropdown-link{font-size:9px!important;font-weight:600!important;letter-spacing:.8px!important;line-height:1.25!important;text-transform:uppercase!important;white-space:nowrap!important;color:#17243a!important;text-decoration:none!important}
+.site-header .nav-cta,.site-header .nav-explore{padding:9px 11px!important;border:1px solid #b9955b!important;color:#87652f!important}
+.site-header .nav-dropdown{position:relative!important;display:flex!important;align-items:center!important;gap:5px!important}
+.site-header .nav-dropdown-trigger{display:inline-flex!important;align-items:center!important;justify-content:center!important;width:26px!important;height:30px!important;padding:0!important;border:0!important;background:transparent!important;cursor:pointer!important}
+.site-header .menu-toggle{display:none!important}
+@media(max-width:900px){.site-header{height:70px!important}.site-header .brand{width:235px!important;max-width:235px!important;flex:0 1 235px!important;height:62px!important}.site-header .brand img{height:56px!important;max-height:56px!important}.site-header .menu-toggle{display:inline-flex!important;align-items:center!important;justify-content:center!important;width:42px!important;height:42px!important;border:1px solid rgba(185,149,91,.38)!important;background:#fff!important;color:#17243a!important;font-size:22px!important;cursor:pointer!important}.site-header .nav-links{display:none!important;position:absolute!important;top:100%!important;left:0!important;right:0!important;width:100%!important;padding:12px 5% 18px!important;background:#fff!important;border-bottom:1px solid rgba(185,149,91,.28)!important;box-shadow:0 14px 24px rgba(8,20,38,.12)!important;align-items:stretch!important;gap:0!important;flex-direction:column!important}.site-header .nav-links.open{display:flex!important}.site-header .nav-links>a,.site-header .nav-dropdown-link{display:flex!important;align-items:center!important;min-height:42px!important;padding:10px 2px!important;font-size:10px!important;white-space:normal!important}.site-header .nav-cta,.site-header .nav-explore{align-self:flex-start!important;margin-top:7px!important;padding:10px 13px!important}.site-header .nav-dropdown{display:flex!important;flex-wrap:wrap!important;width:100%!important;align-items:center!important;gap:0!important}.site-header .nav-dropdown-link{flex:1 1 auto!important}.site-header .nav-dropdown-trigger{width:42px!important;height:42px!important;border-left:1px solid #eee6d9!important}.site-header .nav-dropdown-menu{display:none!important;position:static!important;flex:1 0 100%!important;min-width:0!important;margin:0 0 7px 8px!important;padding:3px 0 5px 12px!important;border:0!important;border-left:2px solid #c4a064!important;box-shadow:none!important;background:#fff!important}.site-header .nav-dropdown.open .nav-dropdown-menu{display:block!important}.site-header .nav-dropdown-menu a{display:block!important;padding:9px 12px!important;font-size:9px!important;line-height:1.5!important}}
+@media(max-width:600px){.site-header .brand{width:min(250px,76vw)!important;max-width:250px!important;flex-basis:min(250px,76vw)!important}.site-header .brand img{height:53px!important;max-height:53px!important}}
+.view-itinerary span,.card-journey-cta span,.dest-actions .arrow,.dest-plan span,.btn span{display:inline-flex;align-items:center;justify-content:center;line-height:1;transition:transform .2s ease}.view-itinerary span,.card-journey-cta span,.dest-actions .arrow,.dest-plan span{width:23px;height:23px;border:1px solid rgba(184,148,88,.45);border-radius:50%;font-size:12px!important;flex:0 0 23px}.view-itinerary:hover span,.card-journey-cta:hover span,.dest-plan:hover span,.btn:hover span{transform:translateX(2px)}
+@media(max-width:680px){.btn{white-space:normal!important;gap:9px!important}.btn span{width:22px;height:22px;border:1px solid currentColor;border-radius:50%;font-size:11px!important;flex:0 0 22px}}
+</style>
+</head>
 <body>
 <header class="site-header">
   <div class="container nav-wrap">
@@ -1146,31 +1163,7 @@ document.addEventListener("DOMContentLoaded",function(){
         <p>Thoughtfully selected journeys, each with its own story to discover.</p>
       </div>
       <div class="featured-grid">
-        <article class="featured-card">
-          <img src="images/featured/andaman-featured.webp" alt="Turquoise sea and tropical beach in the Andaman Islands" loading="lazy">
-          <div class="featured-body">
-            <p class="featured-place">ANDAMAN</p>
-            <h3>Island Escapes</h3>
-            <a href="https://wa.me/918074061235" data-wa-journey="Andaman – Island Escapes" target="_blank" rel="noopener">Enquire Now <span>→</span></a>
-          </div>
-        </article>
-        <article class="featured-card">
-          <img src="images/featured/kashmir-featured.webp" alt="Dal Lake and Himalayan mountains in Kashmir" loading="lazy">
-          <div class="featured-body">
-            <p class="featured-place">KASHMIR</p>
-            <h3>The Himalayan Experience</h3>
-            <a href="https://wa.me/918074061235" data-wa-journey="Kashmir – The Himalayan Experience" target="_blank" rel="noopener">Enquire Now <span>→</span></a>
-          </div>
-        </article>
-        <article class="featured-card">
-          <img src="images/featured/char-dham-by-helicopter-bright.webp" alt="Himalayan temples and helicopter pilgrimage journey" loading="lazy">
-          <div class="featured-body">
-            <p class="featured-place">UTTARAKHAND</p>
-            <h3>Do Dham &amp; Char Dham by Helicopter</h3>
-            <a href="https://wa.me/918074061235" data-wa-journey="Do Dham & Char Dham by Helicopter" target="_blank" rel="noopener">Enquire Now <span>→</span></a>
-          </div>
-        </article>
-        <article class="featured-card">
+<article class="featured-card">
           <img src="images/featured/kailash-mansarovar-featured.webp" alt="Mount Kailash reflected in the waters of Lake Mansarovar" loading="lazy">
           <div class="featured-body">
             <p class="featured-place">KAILASH MANSAROVAR</p>
@@ -1178,8 +1171,31 @@ document.addEventListener("DOMContentLoaded",function(){
             <a href="https://wa.me/918074061235" data-wa-journey="Kailash Mansarovar Yatra" target="_blank" rel="noopener">Enquire Now <span>→</span></a>
           </div>
         </article>
-      </div>
-    </div>
+<article class="featured-card">
+          <img src="images/featured/char-dham-by-helicopter-bright.webp" alt="Himalayan temples and helicopter pilgrimage journey" loading="lazy">
+          <div class="featured-body">
+            <p class="featured-place">UTTARAKHAND</p>
+            <h3>Do Dham &amp; Char Dham by Helicopter</h3>
+            <a href="https://wa.me/918074061235" data-wa-journey="Do Dham & Char Dham by Helicopter" target="_blank" rel="noopener">Enquire Now <span>→</span></a>
+          </div>
+        </article>
+<article class="featured-card">
+          <img src="images/featured/kashmir-featured.webp" alt="Dal Lake and Himalayan mountains in Kashmir" loading="lazy">
+          <div class="featured-body">
+            <p class="featured-place">KASHMIR</p>
+            <h3>The Himalayan Experience</h3>
+            <a href="https://wa.me/918074061235" data-wa-journey="Kashmir – The Himalayan Experience" target="_blank" rel="noopener">Enquire Now <span>→</span></a>
+          </div>
+        </article>
+<article class="featured-card">
+          <img src="images/featured/andaman-featured.webp" alt="Turquoise sea and tropical beach in the Andaman Islands" loading="lazy">
+          <div class="featured-body">
+            <p class="featured-place">ANDAMAN</p>
+            <h3>Island Escapes</h3>
+            <a href="https://wa.me/918074061235" data-wa-journey="Andaman – Island Escapes" target="_blank" rel="noopener">Enquire Now <span>→</span></a>
+          </div>
+        </article>
+</div>
   </section>
 
 
