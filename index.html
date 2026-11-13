@@ -1063,6 +1063,18 @@ document.addEventListener("DOMContentLoaded",function(){
 .view-itinerary span,.card-journey-cta span,.dest-actions .arrow,.dest-plan span,.btn span{display:inline-flex;align-items:center;justify-content:center;line-height:1;transition:transform .2s ease}.view-itinerary span,.card-journey-cta span,.dest-actions .arrow,.dest-plan span{width:23px;height:23px;border:1px solid rgba(184,148,88,.45);border-radius:50%;font-size:12px!important;flex:0 0 23px}.view-itinerary:hover span,.card-journey-cta:hover span,.dest-plan:hover span,.btn:hover span{transform:translateX(2px)}
 @media(max-width:680px){.btn{white-space:normal!important;gap:9px!important}.btn span{width:22px;height:22px;border:1px solid currentColor;border-radius:50%;font-size:11px!important;flex:0 0 22px}}
 </style>
+<style>
+/* Premium typographic arrows shared across journey cards and CTAs */
+.view-itinerary span,.card-journey-cta span,.dest-actions .arrow,.dest-plan span,.btn span{
+  display:inline-flex!important;align-items:center;justify-content:center;line-height:1!important;
+  width:auto!important;height:auto!important;min-width:0!important;flex:0 0 auto!important;
+  border:0!important;border-radius:0!important;background:transparent!important;
+  font-family:Arial,"Segoe UI Symbol",sans-serif!important;font-variant-emoji:text;
+  font-size:18px!important;font-weight:400!important;color:inherit!important;
+  text-shadow:none!important;box-shadow:none!important;transition:transform .2s ease!important;
+}
+.view-itinerary:hover span,.card-journey-cta:hover span,.dest-plan:hover span,.btn:hover span{transform:translate(2px,-2px)!important}
+</style>
 </head>
 <body>
 <header class="site-header">
@@ -1070,21 +1082,23 @@ document.addEventListener("DOMContentLoaded",function(){
     <a class="brand" href="#home" aria-label="DIVIT LUXE HOLIDAYS home">
       <img src="images/divit-luxe-combined-brand-logo.png" alt="DIVIT LUXE HOLIDAYS — Curated Journeys. Extraordinary Experiences.">
     </a>
-    <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+    <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false">☰</button>
     <nav class="nav-links" aria-label="Main navigation">
       <a class="active" href="#home">Home</a>
       <div class="nav-dropdown">
-        <a class="nav-dropdown-link" href="index.html#journeys">Our Journeys</a><button class="nav-dropdown-trigger" type="button" aria-label="Open Our Journeys menu" aria-expanded="false"><span class="nav-chevron" aria-hidden="true"></span></button>
+        <a class="nav-dropdown-link" href="index.html#journeys">Our Journeys</a>
+        <button class="nav-dropdown-trigger" type="button" aria-label="Open Our Journeys menu" aria-expanded="false"><span class="nav-chevron" aria-hidden="true"></span></button>
         <div class="nav-dropdown-menu">
           <a href="domestic-holidays.html">Domestic Journeys</a>
-              <a href="international-holidays.html">International Escapes</a>
+          <a href="international-holidays.html">International Escapes</a>
           <a href="pilgrimage.html">Pilgrimage Journeys</a>
           <a href="helicopter-yatra.html">Helicopter Yatra</a>
           <a href="group-departures.html">Group Departures</a>
         </div>
       </div>
-      <a href="#why-divit">Why Divit Luxe</a>
-      <a class="nav-cta" href="https://wa.me/918074061235" data-wa-journey="General Travel Enquiry" target="_blank" rel="noopener">Plan My Journey</a>
+      <a href="index.html#why-divit">Why Divit Luxe</a>
+      <a href="index.html#contact">Contact</a>
+      <a class="nav-cta" href="https://wa.me/918074061235" target="_blank" rel="noopener">Plan My Journey</a>
     </nav>
   </div>
 </header>
@@ -1276,6 +1290,35 @@ document.getElementById("year").textContent=new Date().getFullYear();
     link.href = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
   });
 })();
+</script>
+<script id="divit-shared-navigation">
+document.addEventListener("DOMContentLoaded", function () {
+  const nav = document.querySelector(".site-header .nav-links");
+  const menuButton = document.querySelector(".site-header .menu-toggle");
+  if (menuButton && nav) {
+    menuButton.addEventListener("click", function () {
+      const isOpen = nav.classList.toggle("open");
+      menuButton.setAttribute("aria-expanded", String(isOpen));
+      menuButton.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
+    });
+  }
+  document.querySelectorAll(".site-header .nav-dropdown-trigger").forEach(function (trigger) {
+    trigger.addEventListener("click", function () {
+      const parent = trigger.closest(".nav-dropdown");
+      const isOpen = parent.classList.toggle("open");
+      trigger.setAttribute("aria-expanded", String(isOpen));
+    });
+  });
+  document.addEventListener("click", function (event) {
+    document.querySelectorAll(".site-header .nav-dropdown.open").forEach(function (dropdown) {
+      if (!dropdown.contains(event.target)) {
+        dropdown.classList.remove("open");
+        const trigger = dropdown.querySelector(".nav-dropdown-trigger");
+        if (trigger) trigger.setAttribute("aria-expanded", "false");
+      }
+    });
+  });
+});
 </script>
 </body>
 </html>

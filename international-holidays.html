@@ -169,6 +169,26 @@ document.addEventListener("DOMContentLoaded",function(){
 
 .destination-grid{align-items:stretch!important;gap:18px!important}.destination-body{padding:12px 13px 13px!important}.destination-tag{margin-bottom:3px!important}.destination-body h3{min-height:0!important;margin:0!important;line-height:1.08!important}.destination-region{min-height:0!important;margin-top:4px!important;line-height:1.4!important}.destination-intro{flex:0 0 auto!important;margin:8px 0 10px!important;line-height:1.55!important}.view-itinerary{padding-top:9px!important}.card-journey-cta{margin-top:9px!important;padding:9px 8px!important;min-height:39px!important}.destination-card{cursor:pointer!important}.destination-card:focus-visible{outline:2px solid #b9955b!important;outline-offset:3px!important}.contact-invitation{background:linear-gradient(115deg,#071629 0%,#0b1a30 55%,#172b46 100%)!important;color:#fff!important;padding:42px 0!important;min-height:280px!important}.contact-invitation:before{background:linear-gradient(90deg,rgba(6,17,32,.94),rgba(6,17,32,.82))!important}.contact-content h2,.contact-content p:not(.eyebrow),.contact-links a{color:#fff!important}.contact-content .eyebrow{color:#dfc38f!important}.contact-content .btn-gold{background:linear-gradient(110deg,#c4a064,#dfc38f)!important;color:#101a2a!important;border:1px solid #c4a064!important}@media(max-width:680px){.destination-grid{gap:14px!important}.destination-image{aspect-ratio:16/9!important}.destination-body h3{font-size:23px!important}.destination-intro{margin:7px 0 9px!important}.contact-invitation{padding:32px 0!important}}
 </style>
+<style>
+/* Premium typographic arrows shared across journey cards and CTAs */
+.view-itinerary span,.card-journey-cta span,.dest-actions .arrow,.dest-plan span,.btn span{
+  display:inline-flex!important;align-items:center;justify-content:center;line-height:1!important;
+  width:auto!important;height:auto!important;min-width:0!important;flex:0 0 auto!important;
+  border:0!important;border-radius:0!important;background:transparent!important;
+  font-family:Arial,"Segoe UI Symbol",sans-serif!important;font-variant-emoji:text;
+  font-size:18px!important;font-weight:400!important;color:inherit!important;
+  text-shadow:none!important;box-shadow:none!important;transition:transform .2s ease!important;
+}
+.view-itinerary:hover span,.card-journey-cta:hover span,.dest-plan:hover span,.btn:hover span{transform:translate(2px,-2px)!important}
+</style>
+<style>
+/* Itinerary overlay above sticky header; modal remains scrollable with close always visible */
+.modal-backdrop{z-index:300!important;padding:12px!important;}
+.itinerary-modal{max-height:calc(100dvh - 24px)!important;overscroll-behavior:contain!important;}
+.modal-close{position:sticky!important;top:10px!important;float:right!important;margin:10px 10px -46px 0!important;z-index:20!important;display:grid!important;place-items:center!important;width:38px!important;height:38px!important;background:rgba(9,20,38,.88)!important;border:1px solid rgba(255,255,255,.75)!important;}
+@media(max-width:600px){.modal-backdrop{padding:8px!important}.itinerary-modal{max-height:calc(100dvh - 16px)!important}.modal-hero{height:180px!important}}
+</style>
+<style>.contact-invitation{background:#081426!important}</style>
 </head>
 <body>
 <header class="site-header">
@@ -178,17 +198,19 @@ document.addEventListener("DOMContentLoaded",function(){
     <nav class="nav-links" aria-label="Main navigation">
       <a href="index.html">Home</a>
       <div class="nav-dropdown">
-        <a class="nav-dropdown-link" href="index.html#journeys">Our Journeys</a><button class="nav-dropdown-trigger" type="button" aria-label="Open Our Journeys menu" aria-expanded="false"><span class="nav-chevron" aria-hidden="true"></span></button>
+        <a class="nav-dropdown-link" href="index.html#journeys">Our Journeys</a>
+        <button class="nav-dropdown-trigger" type="button" aria-label="Open Our Journeys menu" aria-expanded="false"><span class="nav-chevron" aria-hidden="true"></span></button>
         <div class="nav-dropdown-menu">
           <a href="domestic-holidays.html">Domestic Journeys</a>
-              <a class="active" href="international-holidays.html">International Escapes</a>
+          <a class="active" href="international-holidays.html">International Escapes</a>
           <a href="pilgrimage.html">Pilgrimage Journeys</a>
           <a href="helicopter-yatra.html">Helicopter Yatra</a>
           <a href="group-departures.html">Group Departures</a>
         </div>
       </div>
-      <a href="index.html#why-divit">Why DIVIT LUXE</a>
-      <a class="nav-explore" href="international-holidays.html#destinationGrid">Explore International Escapes</a><a class="nav-cta" href="https://wa.me/918074061235?text=Hello%20DIVIT%20LUXE%20HOLIDAYS%2C%20I%20would%20like%20to%20plan%20a%20journey." target="_blank" rel="noopener">Plan My Journey</a>
+      <a href="index.html#why-divit">Why Divit Luxe</a>
+      <a href="index.html#contact">Contact</a>
+      <a class="nav-cta" href="https://wa.me/918074061235" target="_blank" rel="noopener">Plan My Journey</a>
     </nav>
   </div>
 </header>
@@ -358,6 +380,35 @@ nav.querySelectorAll("a").forEach(link => link.addEventListener("click", () => {
   menuToggle.setAttribute("aria-expanded","false");
   menuToggle.textContent = "☰";
 }));
+</script>
+<script id="divit-shared-navigation">
+document.addEventListener("DOMContentLoaded", function () {
+  const nav = document.querySelector(".site-header .nav-links");
+  const menuButton = document.querySelector(".site-header .menu-toggle");
+  if (menuButton && nav) {
+    menuButton.addEventListener("click", function () {
+      const isOpen = nav.classList.toggle("open");
+      menuButton.setAttribute("aria-expanded", String(isOpen));
+      menuButton.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
+    });
+  }
+  document.querySelectorAll(".site-header .nav-dropdown-trigger").forEach(function (trigger) {
+    trigger.addEventListener("click", function () {
+      const parent = trigger.closest(".nav-dropdown");
+      const isOpen = parent.classList.toggle("open");
+      trigger.setAttribute("aria-expanded", String(isOpen));
+    });
+  });
+  document.addEventListener("click", function (event) {
+    document.querySelectorAll(".site-header .nav-dropdown.open").forEach(function (dropdown) {
+      if (!dropdown.contains(event.target)) {
+        dropdown.classList.remove("open");
+        const trigger = dropdown.querySelector(".nav-dropdown-trigger");
+        if (trigger) trigger.setAttribute("aria-expanded", "false");
+      }
+    });
+  });
+});
 </script>
 </body>
 </html>
