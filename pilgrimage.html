@@ -234,7 +234,71 @@
  .grid#grid .destination>img{height:220px;flex-basis:220px}
  .grid#grid .destination .dest-description{min-height:0}
 }
-</style></head><body>
+</style>
+<style id="divit-mobile-itinerary-header-fix">
+/* Mobile itinerary modal: restore normal text flow and prevent title/description overlap */
+@media (max-width: 600px) {
+  #modal .dialog {
+    width: 100% !important;
+    max-height: calc(100dvh - 20px) !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+  }
+  #modal .dialog-head {
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 54px 20px 22px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 9px !important;
+    overflow: hidden !important;
+  }
+  #modal .dialog-head .eyebrow {
+    position: relative !important;
+    inset: auto !important;
+    display: block !important;
+    margin: 0 !important;
+    line-height: 1.4 !important;
+    font-size: 8px !important;
+  }
+  #modal .dialog-head h2 {
+    position: relative !important;
+    inset: auto !important;
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: clamp(27px, 8vw, 34px) !important;
+    line-height: 1.08 !important;
+    overflow-wrap: anywhere !important;
+  }
+  #modal .dialog-head > p:not(.eyebrow) {
+    position: relative !important;
+    inset: auto !important;
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 12px !important;
+    line-height: 1.55 !important;
+  }
+  #modal .close {
+    position: absolute !important;
+    top: 10px !important;
+    right: 10px !important;
+    float: none !important;
+    margin: 0 !important;
+    z-index: 10 !important;
+    width: 36px !important;
+    height: 36px !important;
+  }
+}
+</style>
+
+</head><body>
 <header class="site-header">
   <div class="container nav-wrap">
     <a class="brand" href="index.html" aria-label="DIVIT LUXE HOLIDAYS home">
