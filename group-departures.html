@@ -995,7 +995,30 @@
 .interest{padding:0 0 55px;background:#f4eee3}.interest-card{max-width:990px;margin:auto;padding:28px 34px;border:1px solid #c8a66d;border-radius:12px;background:linear-gradient(115deg,#10223b,#1b3553);color:#fff;display:grid;grid-template-columns:1fr auto;align-items:center;gap:28px;box-shadow:0 14px 35px rgba(15,32,52,.12)}.interest-card h2{font:italic 500 35px var(--serif);color:var(--gold2)}.interest-card p{max-width:500px;font-size:10px;color:#e1e6ec;line-height:1.8;margin-top:5px}.interest-actions{display:flex;flex-direction:column;gap:10px;min-width:225px}
 @media(max-width:800px){.perks{grid-template-columns:repeat(2,1fr);row-gap:20px}.perk:nth-child(2){border-right:0}.interest-card{grid-template-columns:1fr;padding:25px}.interest-actions{flex-direction:row;flex-wrap:wrap}}
 @media(max-width:600px){.hero{min-height:370px;background-position:63% center}.hero-content{padding:48px 0}.hero h1{font-size:52px}.coming{padding:45px 0 40px}.coming-copy{font-size:11px;padding:0 8px}.perks{margin-top:30px;gap:8px}.perk{padding:8px 9px;border-right:0}.perk h3{font-size:17px}.interest{padding:0 0 40px}.interest-card{padding:23px 19px}.interest-card h2{font-size:31px}.interest-actions{display:grid;grid-template-columns:1fr}.interest-actions .btn{width:100%}}
-</style></head><body>
+</style>
+<style id="divit-consistency-overrides">
+/* Consistent footer across every page */
+.site-footer{background:#0b1a30!important;color:#e9e0d2!important;padding:28px 0 15px!important;border-top:1px solid rgba(184,148,88,.35)!important}
+.site-footer .footer-inner{display:grid!important;grid-template-columns:1.35fr 1fr 1.35fr!important;align-items:center!important;gap:34px!important;padding-bottom:20px!important}
+.site-footer .footer-brand img,.site-footer .footer-logo{width:min(300px,100%)!important;height:62px!important;object-fit:contain!important;object-position:left center!important;filter:none!important}
+.site-footer .footer-brand p{color:#d6c5a6!important;font:14px 'Cormorant Garamond',serif!important;line-height:1.5!important;margin-top:7px!important}
+.site-footer .footer-links span{display:block!important;color:#d2ad70!important;font-size:9px!important;letter-spacing:1.6px!important;font-weight:600!important;margin:0 0 12px!important}
+.site-footer .footer-links a{display:block!important;color:#e5e0d7!important;font-size:10px!important;line-height:1.8!important;margin:2px 0!important;text-decoration:none!important}
+.site-footer .footer-links a:hover{color:#dfc38f!important}
+.site-footer .footer-quick-grid{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:3px 18px!important}
+.site-footer .footer-contact a{white-space:normal!important;overflow-wrap:anywhere!important}
+.site-footer .footer-bottom{border-top:1px solid rgba(255,255,255,.16)!important;padding-top:12px!important;color:#b9bec7!important;font-size:9px!important}
+/* Shared closing call-to-action styling, matching the helicopter page's navy-and-gold treatment */
+.heli-final-ribbon,.contact-invitation,.cta-band,.closing-cta,.group-whatsapp-section{background:linear-gradient(115deg,#0b1a30 0%,#142640 100%)!important;color:#fff!important;padding:58px 0!important;border:0!important}
+.heli-final-ribbon h2,.contact-invitation h2,.cta-band h2,.closing-cta h2,.group-whatsapp-section h2{color:#fff!important;font-family:'Cormorant Garamond',serif!important;font-weight:500!important}
+.heli-final-ribbon p,.contact-invitation p,.cta-band p,.closing-cta p,.group-whatsapp-section p{color:#d7dce4!important}
+.heli-final-ribbon .btn,.contact-invitation .btn,.cta-band .btn,.closing-cta .btn,.group-whatsapp-section .btn{background:linear-gradient(110deg,#dfc38f,#b89458)!important;color:#14243a!important;border:1px solid #c6a46c!important}
+/* Group page: restrained black line arrows */
+.group-departures-page .btn span,.group-whatsapp-button span,.hero .btn span{color:#111!important;border:0!important;background:transparent!important;font-size:17px!important;font-weight:400!important}
+@media(max-width:760px){.site-footer .footer-inner{grid-template-columns:1fr 1fr!important;gap:22px!important}.site-footer .footer-brand{grid-column:1/-1!important}.site-footer .footer-brand img{height:55px!important}.site-footer .footer-bottom{flex-direction:column!important;gap:5px!important}}
+@media(max-width:420px){.site-footer .footer-inner{grid-template-columns:1fr!important}.site-footer .footer-brand{grid-column:auto!important}}
+</style>
+</head><body class="group-departures-page">
 <header class="site-header">
   <div class="container nav-wrap">
     <a class="brand" href="index.html#home" aria-label="DIVIT LUXE HOLIDAYS home">
@@ -1022,7 +1045,7 @@
   </div>
 </header>
 
-<main><section class="hero"><div class="container"><div class="hero-content"><p class="eyebrow">GROUP DEPARTURES</p><h1>Travel Together,<br><em>Experience More.</em></h1><p class="hero-copy">Curated group journeys for like-minded travellers who love to explore, discover and create lasting memories together.</p><a class="btn" href="#coming-soon">Discover What's Coming &nbsp; ↗</a></div></div></section>
+<main><section class="hero"><div class="container"><div class="hero-content"><p class="eyebrow">GROUP DEPARTURES</p><h1>Travel Together,<br><em>Experience More.</em></h1><p class="hero-copy">Curated group journeys for like-minded travellers who love to explore, discover and create lasting memories together.</p><a class="btn" href="#coming-soon">Discover What's Coming <span aria-hidden="true">↗</span></a></div></div></section>
 <section class="coming" id="coming-soon"><div class="container"><p class="section-label">CURATED EXPERIENCES · COMING SOON</p><div class="coming-mark">⌁</div><h2>Our Group Departures <em>Coming Soon!</em></h2><p class="coming-copy">We are thoughtfully curating a selection of group departures across India and international destinations. Expect well-planned itineraries, handpicked stays, meaningful experiences and the reassurance of having the DIVIT LUXE team alongside you. Our first departures will be announced soon.</p>
 <div class="perks"><div class="perk"><div class="perk-icon">♧</div><h3>Like-Minded Travellers</h3><p>Share memorable moments with a welcoming group.</p></div><div class="perk"><div class="perk-icon">⌖</div><h3>Thoughtful Itineraries</h3><p>Well-paced journeys with handpicked experiences.</p></div><div class="perk"><div class="perk-icon">◇</div><h3>Trusted Support</h3><p>Careful coordination before and throughout the trip.</p></div><div class="perk"><div class="perk-icon">✧</div><h3>Curated Comfort</h3><p>Attention to detail at every stage of the journey.</p></div></div></div></section>
 </main>
@@ -1050,41 +1073,11 @@
 
 
 
-<footer class="site-footer">
-  <div class="container footer-inner">
-    <div class="footer-brand">
-      <a href="index.html#home" aria-label="DIVIT LUXE HOLIDAYS home">
-        <img src="images/divit-luxe-combined-brand-logo.png" alt="DIVIT LUXE HOLIDAYS — Curated Journeys. Extraordinary Experiences.">
-      </a>
-      <p>Thoughtfully curated holidays across India and the world, shaped around the way you love to travel.</p>
-    </div>
-    <div class="footer-links">
-      <span>EXPLORE</span>
-      <a href="domestic-holidays.html">Domestic Journeys</a>
-      <a href="international-holidays.html">International Escapes</a>
-      <a href="pilgrimage.html">Pilgrimage Journeys</a>
-      <a href="helicopter-yatra.html">Helicopter Yatra</a>
-      <a href="group-departures.html">Group Departures</a>
-    </div>
-    <div class="footer-links">
-      <span>QUICK LINKS</span>
-      <a href="index.html#home">Home</a>
-      <a href="index.html#journeys">Our Journeys</a>
-      <a href="index.html#why-divit">Why DIVIT LUXE</a>
-      <a href="https://wa.me/918074061235" data-wa-journey="General Travel Enquiry" target="_blank" rel="noopener">Plan My Journey</a>
-    </div>
-    <div class="footer-links footer-contact">
-      <span>CONNECT</span>
-      <a href="tel:+918074061235">+91 80 740 61235</a>
-      <a href="mailto:journeys@divitluxeholidays.com">journeys@divitluxeholidays.com</a>
-      <a href="https://wa.me/918074061235" data-wa-journey="General Travel Enquiry" target="_blank" rel="noopener">WhatsApp Us ↗︎</a>
-    </div>
-  </div>
-  <div class="container footer-bottom">
-    <span>© <span id="year"></span> DIVIT LUXE HOLIDAYS. All rights reserved.</span>
-    <span>Curated Journeys. Extraordinary Experiences.</span>
-  </div>
-</footer><script>
+<footer class="site-footer"><div class="container footer-inner">
+  <div class="footer-brand"><a href="index.html#home" aria-label="DIVIT LUXE HOLIDAYS home"><img src="images/divit-luxe-combined-brand-logo.png" alt="DIVIT LUXE HOLIDAYS — Curated Journeys. Extraordinary Experiences."></a><p>Thoughtfully curated holidays across India and the world, shaped around the way you love to travel.</p></div>
+  <div class="footer-links footer-quick"><span>QUICK LINKS</span><div class="footer-quick-grid"><a href="index.html#home">Home</a><a href="index.html#journeys">Our Journeys</a><a href="index.html#why-divit">Why DIVIT LUXE</a><a href="https://wa.me/918074061235" target="_blank" rel="noopener">Plan My Journey</a></div></div>
+  <div class="footer-links footer-contact"><span>CONTACT</span><a href="tel:+918074061235">Call / WhatsApp: +91 80 740 61235</a><a href="mailto:journeys@divitluxeholidays.com">Mail: journeys@divitluxeholidays.com</a></div>
+ </div><div class="container footer-bottom"><span>© <span id="year"></span> DIVIT LUXE HOLIDAYS. All rights reserved.</span><span>Curated Journeys. Extraordinary Experiences.</span></div></footer><script>
 document.querySelectorAll(".nav-dropdown-trigger").forEach(function(trigger){
   trigger.addEventListener("click",function(){
     var parent=trigger.closest(".nav-dropdown"),open=parent.classList.toggle("open");
@@ -1097,4 +1090,11 @@ if(menuButton&&nav){menuButton.addEventListener("click",function(){
 });}
 </script><a class="whatsapp-float" href="https://wa.me/918074061235" data-wa-journey="General Travel Enquiry" target="_blank" rel="noopener" aria-label="Enquire with DIVIT LUXE on WhatsApp" title="Enquire on WhatsApp">
   <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16.02 3.2A12.65 12.65 0 0 0 5.1 22.22L3.35 28.6l6.55-1.72A12.7 12.7 0 1 0 16.02 3.2Zm0 23.1c-1.92 0-3.8-.52-5.45-1.5l-.39-.23-3.88 1.02 1.04-3.78-.25-.4a10.46 10.46 0 1 1 8.93 4.9Zm5.74-7.83c-.31-.16-1.83-.9-2.11-1-.28-.1-.49-.16-.7.16-.2.31-.8 1-1 1.2-.18.2-.36.23-.67.08-.31-.16-1.3-.48-2.48-1.52-.92-.82-1.54-1.83-1.72-2.14-.18-.31-.02-.48.14-.64.14-.14.31-.36.46-.54.16-.18.21-.31.31-.52.1-.2.05-.39-.03-.55-.08-.15-.7-1.68-.96-2.3-.25-.6-.5-.52-.7-.53h-.6c-.2 0-.54.08-.82.39-.28.31-1.08 1.05-1.08 2.56s1.11 2.97 1.26 3.18c.15.2 2.18 3.33 5.28 4.67.74.32 1.32.51 1.77.65.74.24 1.41.2 1.94.12.59-.09 1.83-.75 2.09-1.48.26-.73.26-1.36.18-1.49-.08-.13-.28-.2-.59-.36Z"/></svg>
-</a></body></html>
+</a>
+<script id="divit-nav-behaviour">
+document.addEventListener('click',function(e){
+ document.querySelectorAll('.nav-dropdown.open').forEach(function(menu){if(!menu.contains(e.target)){menu.classList.remove('open');var t=menu.querySelector('.nav-dropdown-trigger');if(t)t.setAttribute('aria-expanded','false');}});
+ var chosen=e.target.closest('.nav-dropdown-menu a, .nav-dropdown-link');if(chosen){var parent=chosen.closest('.nav-dropdown');if(parent){parent.classList.remove('open');var t=parent.querySelector('.nav-dropdown-trigger');if(t)t.setAttribute('aria-expanded','false');}}
+});
+</script>
+</body></html>
