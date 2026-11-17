@@ -818,6 +818,21 @@ html{scroll-padding-top:84px}
 @media(max-width:900px) and (min-width:681px){.site-header{height:76px !important}.brand{width:310px !important;height:60px !important}.brand img{height:56px !important}}
 @media(max-width:680px){.site-header{height:66px !important}.brand{width:min(290px,78%) !important;height:54px !important;flex:0 1 290px !important}.brand img{height:50px !important}.footer-brand img{height:56px !important;width:min(290px,100%) !important}.site-footer{padding:18px 0 12px !important}.footer-inner{gap:16px !important}}
 
+
+/* Homepage footer update: concise Connect details and 2x2 Quick Links */
+.footer-inner{grid-template-columns:1.35fr 1fr 1.15fr !important;align-items:start !important;gap:34px !important}
+.footer-quick-links .quick-links-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:22px;row-gap:9px}
+.footer-quick-links .quick-links-grid a{display:block;margin:0}
+.footer-contact a{line-height:1.7;overflow-wrap:anywhere}
+@media(max-width:680px){.footer-inner{grid-template-columns:1fr 1fr !important;gap:18px 16px !important}.footer-brand{grid-column:1/-1 !important}.footer-quick-links,.footer-contact{grid-column:auto !important}.footer-quick-links .quick-links-grid{grid-template-columns:1fr 1fr;column-gap:12px;row-gap:8px}.footer-contact a{font-size:9px !important}}
+@media(max-width:380px){.footer-inner{grid-template-columns:1fr !important}.footer-brand{grid-column:auto !important}.footer-quick-links,.footer-contact{grid-column:auto !important}}
+
+
+/* Match the WhatsApp floating icon styling used on International Holidays */
+.whatsapp-float{width:50px;height:50px;display:grid;place-items:center;box-shadow:0 6px 20px rgba(0,0,0,.25);transition:transform .2s}
+.whatsapp-float:hover{transform:translateY(-3px)}
+.whatsapp-float svg{width:27px;height:27px;fill:#fff;display:block}
+
 </style>
 <style>
 
@@ -1141,7 +1156,7 @@ document.addEventListener("DOMContentLoaded",function(){
         </div>
       </div>
       <a href="index.html#why-divit">Why Divit Luxe</a>
-      <a href="index.html#contact">Contact</a>
+      <a href="#footer">Contact</a>
       <a class="nav-cta" href="https://wa.me/918074061235" target="_blank" rel="noopener">Plan My Journey</a>
     </nav>
   </div>
@@ -1157,7 +1172,7 @@ document.addEventListener("DOMContentLoaded",function(){
         <h1>Journeys Beyond the <em>Ordinary.</em></h1>
         <p class="hero-copy">Discover thoughtfully curated holidays, meaningful pilgrimages and extraordinary experiences across India and the world.</p>
         <div class="hero-actions">
-          <a class="btn btn-gold" href="#journeys">Explore Journeys <span>↗︎</span></a>
+          <a class="btn btn-gold" href="#journeys">Explore Journeys <span aria-hidden="true">↘</span></a>
           <a class="btn btn-outline" href="https://wa.me/918074061235?text=Hello%20DIVIT%20LUXE%20HOLIDAYS%2C%20I%20would%20like%20to%20plan%20a%20journey." target="_blank" rel="noopener">
             Plan My Journey <span aria-hidden="true">↗︎</span>
           </a>
@@ -1173,7 +1188,7 @@ document.addEventListener("DOMContentLoaded",function(){
   <section class="trust-ribbon" aria-label="The DIVIT LUXE difference">
     <div class="trust-ribbon-inner">
       <div class="trust-item"><span class="trust-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M8 18c0-6 5-10 11-10s11 4 11 10-5 10-11 10c-2 0-4-.5-5.5-1.5L7 31l2-8A10 10 0 0 1 8 18Z"/><path d="M25 12c2-2 5-3 8-3 6 0 11 4 11 10s-5 10-11 10h-2l-5 4 1-6"/></svg></span><span><strong>Curated Experiences</strong><small>Handpicked journeys with thoughtful details</small></span></div>
-      <div class="trust-item"><span class="trust-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M24 5 43 17 24 44 5 17 24 5Z"/><path d="M5 17h38M24 5l-6 12 6 27 6-27-6-12Z"/></svg></span><span><strong>Trusted Partnerships</strong><small>With leading hotels, DMCs and local experts</small></span></div>
+      <div class="trust-item"><span class="trust-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M24 5 43 17 24 44 5 17 24 5Z"/><path d="M5 17h38M24 5l-6 12 6 27 6-27-6-12Z"/></svg></span><span><strong>Trusted Partnerships</strong><small>With leading hotels and local experts</small></span></div>
       <div class="trust-item"><span class="trust-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M8 27v-8a16 16 0 0 1 32 0v8"/><path d="M8 24H5a3 3 0 0 0-3 3v7a3 3 0 0 0 3 3h5V24H8Zm32 0h3a3 3 0 0 1 3 3v7a3 3 0 0 1-3 3h-5V24h2Z"/><path d="M38 37c-2 4-6 6-12 6h-3"/></svg></span><span><strong>End-to-End Support</strong><small>From planning to your safe return</small></span></div>
       <div class="trust-item"><span class="trust-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="m24 4 6 14 15 1-11 10 3 15-13-8-13 8 3-15L3 19l15-1 6-14Z"/></svg></span><span><strong>Personalised Care</strong><small>Because every traveller is unique</small></span></div>
     </div>
@@ -1282,10 +1297,6 @@ document.addEventListener("DOMContentLoaded",function(){
         <div class="closing-point"><span>03</span><div><h3>Dedicated Assistance</h3><p>A personal point of contact to guide you through your journey.</p></div></div>
         <div class="closing-contact">
           <p class="eyebrow">LET'S PLAN YOUR NEXT JOURNEY</p>
-          <div class="closing-contact-links">
-            <a href="tel:+918074061235">+91 80 740 61235</a>
-            <a href="mailto:journeys@divitluxeholidays.com">journeys@divitluxeholidays.com</a>
-          </div>
           <div class="contact-actions">
             <a class="btn btn-gold" href="https://wa.me/918074061235" data-wa-journey="General Travel Enquiry" target="_blank" rel="noopener">Plan My Journey <span>↗︎</span></a>
           </div>
@@ -1296,7 +1307,7 @@ document.addEventListener("DOMContentLoaded",function(){
 
 </main>
 
-<footer class="site-footer">
+<footer class="site-footer" id="footer">
   <div class="container footer-inner">
     <div class="footer-brand">
       <a href="#home" aria-label="DIVIT LUXE HOLIDAYS home">
@@ -1304,26 +1315,19 @@ document.addEventListener("DOMContentLoaded",function(){
       </a>
       <p>Thoughtfully curated holidays across India and the world, shaped around the way you love to travel.</p>
     </div>
-    <div class="footer-links">
-      <span>EXPLORE</span>
-      <a href="domestic-holidays.html">Domestic Journeys</a>
-      <a href="international-holidays.html">International Escapes</a>
-      <a href="pilgrimage.html">Pilgrimage Journeys</a>
-      <a href="helicopter-yatra.html">Helicopter Yatra</a>
-      <a href="#journeys">Group Departures</a>
-    </div>
-    <div class="footer-links">
+    <div class="footer-links footer-quick-links">
       <span>QUICK LINKS</span>
-      <a href="#home">Home</a>
-      <a href="#journeys">Our Journeys</a>
-      <a href="#why-divit">Why DIVIT LUXE</a>
-      <a href="https://wa.me/918074061235" data-wa-journey="General Travel Enquiry" target="_blank" rel="noopener">Plan My Journey</a>
+      <div class="quick-links-grid">
+        <a href="#home">Home</a>
+        <a href="#journeys">Our Journeys</a>
+        <a href="#why-divit">Why DIVIT LUXE</a>
+        <a href="https://wa.me/918074061235" data-wa-journey="General Travel Enquiry" target="_blank" rel="noopener">Plan My Journey</a>
+      </div>
     </div>
     <div class="footer-links footer-contact">
       <span>CONNECT</span>
-      <a href="tel:+918074061235">+91 80 740 61235</a>
-      <a href="mailto:journeys@divitluxeholidays.com">journeys@divitluxeholidays.com</a>
-      <a href="https://wa.me/918074061235" data-wa-journey="General Travel Enquiry" target="_blank" rel="noopener">WhatsApp Us ↗︎</a>
+      <a href="tel:+918074061235">Call/WhatsApp: +91 80 740 61235</a>
+      <a href="mailto:journeys@divitluxeholidays.com">Mail: journeys@divitluxeholidays.com</a>
     </div>
   </div>
   <div class="container footer-bottom">
@@ -1332,7 +1336,7 @@ document.addEventListener("DOMContentLoaded",function(){
   </div>
 </footer>
 <a class="whatsapp-float" href="https://wa.me/918074061235" data-wa-journey="General Travel Enquiry" target="_blank" rel="noopener" aria-label="Enquire with DIVIT LUXE on WhatsApp" title="Enquire on WhatsApp">
-  <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16.02 3.2A12.65 12.65 0 0 0 5.1 22.22L3.35 28.6l6.55-1.72A12.7 12.7 0 1 0 16.02 3.2Zm0 23.1c-1.92 0-3.8-.52-5.45-1.5l-.39-.23-3.88 1.02 1.04-3.78-.25-.4a10.46 10.46 0 1 1 8.93 4.9Zm5.74-7.83c-.31-.16-1.83-.9-2.11-1-.28-.1-.49-.16-.7.16-.2.31-.8 1-1 1.2-.18.2-.36.23-.67.08-.31-.16-1.3-.48-2.48-1.52-.92-.82-1.54-1.83-1.72-2.14-.18-.31-.02-.48.14-.64.14-.14.31-.36.46-.54.16-.18.21-.31.31-.52.1-.2.05-.39-.03-.55-.08-.15-.7-1.68-.96-2.3-.25-.6-.5-.52-.7-.53h-.6c-.2 0-.54.08-.82.39-.28.31-1.08 1.05-1.08 2.56s1.11 2.97 1.26 3.18c.15.2 2.18 3.33 5.28 4.67.74.32 1.32.51 1.77.65.74.24 1.41.2 1.94.12.59-.09 1.83-.75 2.09-1.48.26-.73.26-1.36.18-1.49-.08-.13-.28-.2-.59-.36Z"/></svg>
+  <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16.02 3.2A12.65 12.65 0 0 0 5.1 22.22L3.35 28.6l6.55-1.72A12.7 12.7 0 1 0 16.02 3.2Zm0 23.1c-1.92 0-3.8-.52-5.45-1.5l-.39-.23-3.88 1.02 1.04-3.78-.25-.4a10.46 10.46 0 1 1 8.93 4.9Zm5.74-7.83c-.31-.16-1.83-.9-2.11-1-.28-.1-.49-.16-.7.16-.2.31-.8 1-1 1.2-.18.2-.36.23-.67.08-.31-.16-1.3-.48-2.48-1.52-.92-.82-1.54-1.83-1.72-2.14-.18-.31-.02-.48.14-.64.14-.14.31-.36.46-.54.16-.18.21-.31.31-.52.1-.2.05-.39-.03-.55-.08-.15-.7-1.68-.96-2.3-.25-.6-.5-.52-.7-.53h-.6c-.2 0-.54.08-.82.39-.28.31-1.08 1.05-1.08 2.57s1.1 2.98 1.25 3.19c.15.2 2.16 3.3 5.23 4.63.73.32 1.3.51 1.75.65.74.24 1.41.2 1.94.12.59-.09 1.83-.75 2.08-1.48.26-.72.26-1.34.18-1.47-.08-.13-.28-.2-.59-.36Z"/></svg>
 </a>
 
 <script>
