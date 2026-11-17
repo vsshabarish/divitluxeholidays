@@ -495,7 +495,6 @@ document.addEventListener("DOMContentLoaded", function () {
   --domestic-explore-arrow-size:18px;
 }
 </style>
-<style>.domestic-explore-arrow{font-size:19px;line-height:1;display:inline-block;vertical-align:middle}</style>
 <style id="index-header-footer-whatsapp-match">
 /* Exact homepage header theme */
 .site-header{
@@ -989,5 +988,31 @@ document.addEventListener("DOMContentLoaded", function () {
   .footer-brand{grid-column:auto !important}
 }
 
+</style>
+
+<style id="domestic-hero-explore-button-fix">
+/* Original compact Explore Destinations button scale on desktop and mobile */
+.hero .btn[href="#destinations"]{
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap:normal !important;
+  padding:12px 18px !important;
+  font-size:9px !important;
+  line-height:normal !important;
+  letter-spacing:1.2px !important;
+  font-weight:600 !important;
+  text-transform:uppercase !important;
+  transform:none !important;
+}
+.hero .btn[href="#destinations"]::first-letter{font-size:inherit !important}
+@media(max-width:768px){
+  .hero .btn[href="#destinations"]{
+    padding:12px 18px !important;
+    font-size:9px !important;
+    line-height:normal !important;
+    letter-spacing:1.2px !important;
+  }
+}
 </style>
 </body></html>
