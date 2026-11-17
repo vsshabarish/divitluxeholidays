@@ -833,6 +833,102 @@ html{scroll-padding-top:84px}
 .whatsapp-float:hover{transform:translateY(-3px)}
 .whatsapp-float svg{width:27px;height:27px;fill:#fff;display:block}
 
+
+/* Homepage V3: WhatsApp floating action with visible Plan Your Journey label */
+.whatsapp-float{
+  width:62px !important;
+  height:62px !important;
+  border-radius:50% !important;
+  display:grid !important;
+  place-items:center !important;
+  background:#1eae65 !important;
+  color:#fff !important;
+  box-shadow:0 6px 20px rgba(0,0,0,.25) !important;
+  text-decoration:none !important;
+  transition:transform .2s ease, box-shadow .2s ease;
+}
+.whatsapp-float:hover{transform:translateY(-3px)}
+.whatsapp-float:after{
+  content:"Plan Your Journey";
+  position:absolute;
+  right:calc(100% + 14px);
+  top:50%;
+  transform:translateY(-50%);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-width:228px;
+  min-height:54px;
+  box-sizing:border-box;
+  padding:12px 22px;
+  white-space:nowrap;
+  background:#fff;
+  color:#17243a;
+  border:2px solid #e6dccb;
+  border-radius:9px;
+  font-family:inherit;
+  font-size:16px;
+  font-weight:400;
+  letter-spacing:1.1px;
+  line-height:1.2;
+  box-shadow:0 3px 12px rgba(0,0,0,.12);
+}
+.whatsapp-float svg{width:31px !important;height:31px !important;fill:#fff !important;display:block}
+.hero-actions .hero-explore-arrow{
+  width:19px;
+  height:19px;
+  flex:0 0 19px;
+  display:inline-block;
+  vertical-align:middle;
+  margin-left:9px;
+  color:currentColor;
+}
+@media(max-width:680px){
+  .hero-actions{align-items:stretch;gap:9px}
+  .hero-actions .btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:5px;
+    min-width:0;
+    padding:12px 10px !important;
+    font-size:clamp(8px,2.5vw,10px) !important;
+    letter-spacing:.65px !important;
+    line-height:1.25;
+    text-align:center;
+  }
+  .hero-actions .btn-gold{flex:1 1 0}
+  .hero-actions .btn-outline{flex:1 1 0}
+  .hero-actions .hero-explore-arrow{
+    width:14px;
+    height:14px;
+    flex-basis:14px;
+    margin-left:4px;
+  }
+  .whatsapp-float{
+    width:54px !important;
+    height:54px !important;
+    right:14px !important;
+    bottom:14px !important;
+  }
+  .whatsapp-float:after{
+    min-width:0;
+    min-height:44px;
+    padding:9px 13px;
+    font-size:12px;
+    letter-spacing:.55px;
+    right:calc(100% + 10px);
+    border-radius:7px;
+  }
+  .whatsapp-float svg{width:27px !important;height:27px !important}
+}
+@media(max-width:360px){
+  .hero-actions{gap:7px}
+  .hero-actions .btn{padding:11px 7px !important;font-size:8px !important;letter-spacing:.35px !important}
+  .hero-actions .hero-explore-arrow{width:12px;height:12px;flex-basis:12px}
+  .whatsapp-float:after{font-size:11px;padding:8px 10px}
+}
+
 </style>
 <style>
 
@@ -1172,7 +1268,11 @@ document.addEventListener("DOMContentLoaded",function(){
         <h1>Journeys Beyond the <em>Ordinary.</em></h1>
         <p class="hero-copy">Discover thoughtfully curated holidays, meaningful pilgrimages and extraordinary experiences across India and the world.</p>
         <div class="hero-actions">
-          <a class="btn btn-gold" href="#journeys">Explore Journeys <span aria-hidden="true">↘</span></a>
+          <a class="btn btn-gold" href="#journeys">Explore Journeys
+            <svg class="hero-explore-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M5 5L19 19M8 19H19V8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
           <a class="btn btn-outline" href="https://wa.me/918074061235?text=Hello%20DIVIT%20LUXE%20HOLIDAYS%2C%20I%20would%20like%20to%20plan%20a%20journey." target="_blank" rel="noopener">
             Plan My Journey <span aria-hidden="true">↗︎</span>
           </a>
