@@ -56,6 +56,15 @@
 @media(max-width:760px){.site-header{height:66px}.brand{width:min(285px,78%);height:58px;flex:0 1 285px}.brand img{height:54px}.menu-toggle{display:block}.nav-links{display:none;position:absolute;top:66px;left:0;right:0;padding:14px 5%;background:#fff;border-bottom:1px solid rgba(185,149,91,.28);flex-direction:column;align-items:stretch;gap:0}.nav-links.open{display:flex}.nav-links a{font-size:10px;padding:11px 0}.nav-links .nav-cta{text-align:center;margin-top:8px}.page-hero{min-height:340px;background-position:58% center}.hero-content{padding:52px 0}.destinations-section{padding:38px 0 45px}.destination-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.destination-image{height:auto;aspect-ratio:1200/650}.destination-body{padding:11px}.destination-body h3{font-size:22px;min-height:42px}.destination-intro{font-size:8px}.inspiration-inner{display:block}.inspiration-inner .btn{margin-top:17px}.footer-inner{grid-template-columns:1fr 1fr;gap:18px 14px}.footer-brand{grid-column:1/-1}.footer-contact{grid-column:1/-1}.footer-bottom{flex-direction:column;gap:5px}.modal-backdrop{padding:8px}.itinerary-modal{max-height:94vh}.modal-close{top:8px;margin:8px 8px -44px 0}.modal-hero{height:175px}.modal-content{padding:17px 14px 18px}.day-list{grid-template-columns:1fr}.modal-actions{justify-content:stretch}.modal-actions .btn{width:100%}}
 @media(max-width:390px){.destination-grid{grid-template-columns:1fr}.destination-image{height:auto;aspect-ratio:1200/650}.destination-card{display:grid;grid-template-columns:42% 1fr}.destination-image{height:100%;min-height:205px}.destination-body h3{font-size:23px}.destination-intro{font-size:9px}.footer-inner{grid-template-columns:1fr}.footer-brand,.footer-contact{grid-column:auto}.contact-links{flex-direction:column;gap:7px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+
+/* Header alignment matched to homepage */
+.site-header{height:76px !important;}
+.site-header .brand{width:min(390px,42%) !important;height:66px !important;flex:0 1 390px !important;}
+.site-header .brand img{height:62px !important;}
+.site-header .nav-links{gap:22px !important;}
+.site-header .nav-links a{font-size:10px !important;letter-spacing:1.25px !important;}
+.site-header .nav-links .nav-cta{padding:10px 14px !important;border:1px solid var(--gold) !important;}
+@media(max-width:680px){.site-header{height:66px !important}.site-header .brand{width:min(300px,78%) !important;height:58px !important;flex:0 1 auto !important}.site-header .brand img{height:54px !important}}
 </style>
 <style>
 /* DIVIT LUXE navigation dropdown and homepage hero refinements */
@@ -228,29 +237,29 @@ document.addEventListener("DOMContentLoaded",function(){
 </head>
 <body>
 <header class="site-header">
-<div class="container nav-wrap">
-<a aria-label="DIVIT LUXE HOLIDAYS home" class="brand" href="index.html#home">
-<img alt="DIVIT LUXE HOLIDAYS — Curated Journeys. Extraordinary Experiences." src="images/divit-luxe-combined-brand-logo.png"/>
-</a>
-<button aria-expanded="false" aria-label="Open navigation" class="menu-toggle" type="button">☰</button>
-<nav aria-label="Main navigation" class="nav-links">
-<a href="index.html#home">Home</a>
-<div class="nav-dropdown">
-<a href="index.html#journeys">Our Journeys</a>
-<button aria-expanded="false" aria-label="Open Our Journeys menu" class="nav-dropdown-trigger" type="button"><span aria-hidden="true" class="nav-chevron"></span></button>
-<div class="nav-dropdown-menu">
-<a href="domestic-holidays.html">Domestic Journeys</a>
-<a class="active" href="international-holidays.html">International Escapes</a>
-<a href="pilgrimage.html">Pilgrimage Journeys</a>
-<a href="helicopter-yatra.html">Helicopter Yatra</a>
-<a href="group-departures.html">Group Departures</a>
-</div>
-</div>
-<a href="index.html#why-divit">Why Divit Luxe</a>
-<a href="#footer">Contact</a>
-<a href="https://wa.me/918074061235" rel="noopener" target="_blank">Plan My Journey</a>
-</nav>
-</div>
+  <div class="container nav-wrap">
+    <a class="brand" href="index.html#home" aria-label="DIVIT LUXE HOLIDAYS home">
+      <img src="images/divit-luxe-combined-brand-logo.png" alt="DIVIT LUXE HOLIDAYS — Curated Journeys. Extraordinary Experiences.">
+    </a>
+    <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false">☰</button>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="index.html#home">Home</a>
+      <div class="nav-dropdown">
+        <a class="nav-dropdown-link" href="index.html#journeys">Our Journeys</a>
+        <button class="nav-dropdown-trigger" type="button" aria-label="Open Our Journeys menu" aria-expanded="false"><span class="nav-chevron" aria-hidden="true"></span></button>
+        <div class="nav-dropdown-menu">
+          <a href="domestic-holidays.html">Domestic Journeys</a>
+          <a class="active" href="international-holidays.html">International Escapes</a>
+          <a href="pilgrimage.html">Pilgrimage Journeys</a>
+          <a href="helicopter-yatra.html">Helicopter Yatra</a>
+          <a href="group-departures.html">Group Departures</a>
+        </div>
+      </div>
+      <a href="index.html#why-divit">Why Divit Luxe</a>
+      <a href="index.html#footer">Contact</a>
+      <a class="nav-cta" href="https://wa.me/918074061235" target="_blank" rel="noopener">Plan My Journey</a>
+    </nav>
+  </div>
 </header>
 <main>
 <section class="page-hero">
