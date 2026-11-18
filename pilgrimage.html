@@ -491,3 +491,39 @@ document.addEventListener("DOMContentLoaded", function () {
 </style>
 
 </body></html>
+<style id="divit-pilgrimage-whatsapp-label">
+/* Persistent Plan Your Journey label, matching the supplied reference image */
+.whatsapp-float{overflow:visible}
+.whatsapp-float .wa-tooltip{
+  display:block!important;
+  position:absolute;
+  right:68px;
+  top:50%;
+  transform:translateY(-50%);
+  white-space:nowrap;
+  background:#fff;
+  color:#17243a;
+  border:1px solid #e6dccb;
+  border-radius:4px;
+  padding:10px 14px;
+  font:500 10px var(--sans);
+  letter-spacing:.7px;
+  box-shadow:0 3px 12px rgba(0,0,0,.12);
+  opacity:1!important;
+  visibility:visible!important;
+  pointer-events:none;
+}
+@media(max-width:640px){
+  .whatsapp-float .wa-tooltip{display:block!important;right:62px;padding:9px 12px;font-size:9px}
+}
+</style>
+
+<script id="divit-pilgrimage-whatsapp-message">
+(function(){
+  var link = document.querySelector(".whatsapp-float[data-wa-journey]");
+  if (!link) return;
+  var journey = link.getAttribute("data-wa-journey") || "General Travel Enquiry";
+  var message = "Hello DIVIT LUXE HOLIDAYS, I would like to enquire about " + journey + ".";
+  link.href = "https://wa.me/918074061235?text=" + encodeURIComponent(message);
+})();
+</script>
