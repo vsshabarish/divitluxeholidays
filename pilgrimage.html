@@ -309,11 +309,6 @@
 @media(max-width:680px){.footer-inner{grid-template-columns:1fr 1fr !important;gap:15px !important;}.footer-brand{grid-column:1/-1 !important;}.footer-brand img{height:56px !important;width:min(285px,100%) !important;}.footer-bottom{flex-direction:column !important;gap:6px !important;}}
 @media(max-width:380px){.footer-inner{grid-template-columns:1fr !important;}.footer-brand{grid-column:auto !important;}}
 </style>
-
-<!-- DIVIT LUXE HOLIDAYS: approved +5% logo enhancement for header and footer -->
-<style id="divit-logo-enhancement-5pct">
-.site-header .brand img, .site-footer .footer-brand img { transform: scale(1.10) !important; transform-origin: left center !important; }
-</style>
 </head><body>
 <header class="site-header">
 <div class="container nav-wrap">
@@ -389,8 +384,9 @@ function showPlan(i){activePlan=i;const p=plans[current].p[i];document.getElemen
 function wa(journey){return 'https://wa.me/918074061235?text='+encodeURIComponent('Hello DIVIT LUXE HOLIDAYS, I am interested in '+journey+'. Please share more details.');}
 document.querySelectorAll('[data-wa]').forEach(a=>a.href=wa(a.dataset.wa));document.getElementById('modal').addEventListener('click',e=>{if(e.target.id==='modal')closeModal();});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});document.getElementById('year').textContent=new Date().getFullYear();
 </script>
-<a class="whatsapp-float wa-link" data-wa-journey="General Travel Enquiry" href="https://wa.me/918074061235" target="_blank" rel="noopener" aria-label="Plan your journey on WhatsApp" title="Plan Your Journey">
-  <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16.02 3.2A12.65 12.65 0 0 0 5.1 22.22L3.35 28.6l6.55-1.72A12.7 12.7 0 1 0 16.02 3.2Zm0 23.1c-1.92 0-3.8-.52-5.45-1.5l-.39-.23-3.88 1.02 1.04-3.78-.25-.4a10.46 10.46 0 1 1 8.93 4.9Zm5.74-7.83c-.31-.16-1.83-.9-2.11-1-.28-.1-.49-.16-.7.16-.2.31-.8 1-1 1.2-.18.2-.36.23-.67.08-.31-.16-1.3-.48-2.48-1.52-.92-.82-1.54-1.83-1.72-2.14-.18-.31-.02-.48.14-.64.14-.14.31-.36.46-.54.16-.18.21-.31.31-.52.1-.2.05-.39-.03-.55-.08-.15-.7-1.68-.96-2.3-.25-.6-.5-.52-.7-.53h-.6c-.2 0-.54.08-.82.39-.28.31-1.08 1.05-1.08 2.57s1.1 2.98 1.25 3.19c.15.2 2.16 3.3 5.23 4.63.73.32 1.3.51 1.75.65.74.24 1.41.2 1.94.12.59-.09 1.83-.75 2.08-1.48.26-.72.26-1.34.18-1.47-.08-.13-.28-.2-.59-.36Z"/></svg>
+<a aria-label="Chat with DIVIT LUXE HOLIDAYS on WhatsApp" class="whatsapp-float" href="https://wa.me/918074061235?text=Hello%20DIVIT%20LUXE%20HOLIDAYS%2C%20I%20would%20like%20to%20plan%20a%20journey." rel="noopener noreferrer" target="_blank" title="Plan Your Journey">
+<span aria-hidden="true" class="wa-tooltip">Plan Your Journey</span>
+<svg aria-hidden="true" role="img" viewbox="0 0 32 32"><path d="M16.04 3.2c-7.05 0-12.78 5.72-12.78 12.77 0 2.25.59 4.45 1.71 6.39L3.15 28.8l6.6-1.73a12.75 12.75 0 0 0 6.28 1.64h.01c7.04 0 12.77-5.73 12.77-12.78 0-3.41-1.33-6.62-3.74-9.03a12.69 12.69 0 0 0-9.03-3.7zm0 23.35h-.01a10.6 10.6 0 0 1-5.4-1.48l-.39-.23-3.92 1.03 1.05-3.82-.25-.4a10.57 10.57 0 0 1-1.62-5.68c0-5.82 4.73-10.55 10.55-10.55 2.82 0 5.47 1.1 7.46 3.09a10.48 10.48 0 0 1 3.09 7.47c0 5.82-4.73 10.57-10.56 10.57zm5.79-7.91c-.32-.16-1.88-.93-2.17-1.04-.29-.1-.5-.16-.71.16-.21.32-.82 1.04-1 1.25-.19.21-.37.24-.69.08-.32-.16-1.35-.5-2.57-1.59-.95-.84-1.59-1.88-1.78-2.2-.18-.32-.02-.49.14-.65.14-.14.32-.37.48-.55.16-.19.21-.32.32-.53.1-.21.05-.4-.03-.56-.08-.16-.71-1.72-.98-2.36-.26-.62-.52-.53-.71-.54h-.61c-.21 0-.56.08-.85.4-.29.32-1.11 1.09-1.11 2.65s1.14 3.07 1.3 3.28c.16.21 2.24 3.42 5.43 4.8.76.33 1.35.53 1.81.68.76.24 1.45.21 2 .13.61-.09 1.88-.77 2.14-1.51.27-.75.27-1.38.19-1.51-.08-.13-.29-.21-.61-.37z"></path></svg>
 </a>
 <script id="divit-shared-navigation">
 document.addEventListener("DOMContentLoaded", function () {
@@ -463,48 +459,35 @@ document.addEventListener("DOMContentLoaded", function () {
   },true);
 })();
 </script>
-<script>
-document.getElementById("year").textContent=new Date().getFullYear();
-(function(){
-  const phone = "918074061235";
-  document.querySelectorAll(".whatsapp-float[data-wa-journey]").forEach(function(link){
-    const journey = link.getAttribute("data-wa-journey") || "General Travel Enquiry";
-    const message = "Hello DIVIT LUXE HOLIDAYS, I would like to enquire about " + journey + ".";
-    link.href = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
-  });
-})();
-</script>
-<style id="international-whatsapp-match">
-/* Exact floating WhatsApp appearance and placement from international-holidays.html */
+
+<style id="homepage-whatsapp-position-override">
+/* Match the homepage floating WhatsApp placement on Pilgrimage only */
 .whatsapp-float{
-  position:fixed;
-  right:18px;
-  bottom:18px;
-  z-index:45;
-  width:50px;
-  height:50px;
-  border-radius:50%;
-  background:#1eae65;
-  display:grid;
-  place-items:center;
-  box-shadow:0 6px 20px rgba(0,0,0,.25);
-  transition:transform .2s;
+  position:fixed !important;
+  right:18px !important;
+  bottom:18px !important;
+  top:auto !important;
+  transform:none !important;
+  z-index:45 !important;
+  width:50px !important;
+  height:50px !important;
 }
-.whatsapp-float:hover{transform:translateY(-3px)}
-.whatsapp-float svg{width:27px;height:27px;fill:#fff}
-.whatsapp-float:after{
-  content:"Plan Your Journey";
-  position:absolute;
-  right:59px;
-  white-space:nowrap;
-  background:#fff;
-  color:#17243a;
-  border:1px solid #e6dccb;
-  padding:7px 10px;
-  border-radius:3px;
-  font-size:8px;
-  letter-spacing:.5px;
-  box-shadow:0 3px 12px #0002;
+.whatsapp-float:hover,
+.whatsapp-float:focus-visible{
+  transform:translateY(-3px) !important;
+}
+@media(max-width:640px){
+  .whatsapp-float{
+    right:18px !important;
+    bottom:18px !important;
+    top:auto !important;
+    transform:none !important;
+  }
+  .whatsapp-float:hover,
+  .whatsapp-float:focus-visible{
+    transform:translateY(-3px) !important;
+  }
 }
 </style>
+
 </body></html>
