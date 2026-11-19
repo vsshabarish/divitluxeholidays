@@ -1,0 +1,252 @@
+/*
+  DIVIT LUXE HOLIDAYS — Shared Hero System
+  Applies to the five internal destination/service pages only.
+  Page-specific background images and image focal positions remain page-owned.
+  Header and footer styles are intentionally out of scope.
+*/
+
+:root {
+  --divit-hero-height: 420px;
+  --divit-hero-mobile-height: 380px;
+  --divit-hero-content-width: 1160px;
+}
+
+/* Shared hero frame */
+body > main > .hero,
+body > main > .page-hero,
+main .hero,
+main .page-hero {
+  min-height: var(--divit-hero-height) !important;
+  display: flex !important;
+  align-items: center !important;
+  position: relative !important;
+  box-sizing: border-box !important;
+  color: #fff !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+}
+
+/* Shared content container */
+main .hero > .container,
+main .page-hero > .container,
+main .hero .container.hero-inner,
+main .hero .container.hero-content,
+main .page-hero .container.hero-content {
+  width: min(var(--divit-hero-content-width), 92%) !important;
+  max-width: var(--divit-hero-content-width) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  box-sizing: border-box !important;
+}
+
+/* Support the page-specific inner wrappers without changing their markup */
+main .hero .hero-inner,
+main .hero .hero-content,
+main .page-hero .hero-content {
+  max-width: 660px !important;
+  padding: 54px 0 !important;
+  position: relative !important;
+  z-index: 1 !important;
+  text-align: left !important;
+}
+
+/* Common editorial typography */
+main .hero .eyebrow,
+main .page-hero .eyebrow {
+  display: block !important;
+  margin: 0 0 15px !important;
+  color: #dfc38f !important;
+  font-family: var(--sans, Arial, sans-serif) !important;
+  font-size: 10px !important;
+  font-weight: 600 !important;
+  line-height: 1.5 !important;
+  letter-spacing: 2.4px !important;
+  text-transform: uppercase !important;
+  text-align: left !important;
+}
+
+main .hero h1,
+main .page-hero h1 {
+  max-width: 760px !important;
+  margin: 0 0 17px !important;
+  color: #fff !important;
+  font-family: var(--serif, Georgia, serif) !important;
+  font-size: clamp(42px, 5.1vw, 68px) !important;
+  font-weight: 400 !important;
+  line-height: 1.02 !important;
+  letter-spacing: -.6px !important;
+  text-align: left !important;
+}
+
+main .hero h1 em,
+main .page-hero h1 em {
+  color: #dfc38f !important;
+  font-style: italic !important;
+}
+
+main .hero .copy,
+main .hero .hero-copy,
+main .page-hero .copy,
+main .page-hero .hero-copy {
+  display: block !important;
+  max-width: 590px !important;
+  margin: 0 0 23px !important;
+  color: #e5e8ed !important;
+  font-family: var(--sans, Arial, sans-serif) !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: 1.8 !important;
+  text-align: left !important;
+}
+
+/* Common CTA treatment; preserves each page's existing label and destination */
+main .hero .hero-content > .btn,
+main .hero .hero-inner > .btn,
+main .page-hero .hero-content > .btn,
+main .page-hero .hero-inner > .btn {
+  display: inline-flex !important;
+  width: auto !important;
+  min-height: 48px !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  margin: 0 !important;
+  padding: 14px 23px !important;
+  border: 1px solid #c9a86a !important;
+  border-radius: 1px !important;
+  background: #c9a86a !important;
+  color: #111d30 !important;
+  font-family: var(--sans, Arial, sans-serif) !important;
+  font-size: 10px !important;
+  font-weight: 600 !important;
+  line-height: 1.25 !important;
+  letter-spacing: 1.25px !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  text-transform: uppercase !important;
+  white-space: normal !important;
+}
+
+main .hero .hero-content > .btn:hover,
+main .hero .hero-inner > .btn:hover,
+main .page-hero .hero-content > .btn:hover,
+main .page-hero .hero-inner > .btn:hover {
+  background: #dfc38f !important;
+  border-color: #dfc38f !important;
+}
+
+/* Tablet */
+@media (min-width: 701px) and (max-width: 1024px) {
+  body > main > .hero,
+  body > main > .page-hero,
+  main .hero,
+  main .page-hero {
+    min-height: 400px !important;
+  }
+
+  main .hero .hero-inner,
+  main .hero .hero-content,
+  main .page-hero .hero-content {
+    max-width: 620px !important;
+    padding: 48px 0 !important;
+  }
+
+  main .hero h1,
+  main .page-hero h1 {
+    font-size: clamp(40px, 5.2vw, 56px) !important;
+  }
+
+  main .hero .copy,
+  main .hero .hero-copy,
+  main .page-hero .copy,
+  main .page-hero .hero-copy {
+    max-width: 540px !important;
+    font-size: 13px !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  body > main > .hero,
+  body > main > .page-hero,
+  main .hero,
+  main .page-hero {
+    min-height: var(--divit-hero-mobile-height) !important;
+    height: auto !important;
+    max-height: none !important;
+    align-items: center !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  main .hero > .container,
+  main .page-hero > .container,
+  main .hero .container.hero-inner,
+  main .hero .container.hero-content,
+  main .page-hero .container.hero-content {
+    width: calc(100% - 44px) !important;
+    max-width: 560px !important;
+  }
+
+  main .hero .hero-inner,
+  main .hero .hero-content,
+  main .page-hero .hero-content {
+    width: 100% !important;
+    max-width: 560px !important;
+    padding: 42px 0 !important;
+  }
+
+  main .hero .eyebrow,
+  main .page-hero .eyebrow {
+    margin-bottom: 12px !important;
+    font-size: 8px !important;
+    letter-spacing: 1.9px !important;
+  }
+
+  main .hero h1,
+  main .page-hero h1 {
+    max-width: 100% !important;
+    margin-bottom: 14px !important;
+    font-size: clamp(35px, 9vw, 48px) !important;
+    line-height: 1.04 !important;
+    letter-spacing: -.35px !important;
+    overflow-wrap: normal !important;
+    text-wrap: balance !important;
+  }
+
+  main .hero .copy,
+  main .hero .hero-copy,
+  main .page-hero .copy,
+  main .page-hero .hero-copy {
+    max-width: 100% !important;
+    margin-bottom: 19px !important;
+    font-size: 12px !important;
+    line-height: 1.75 !important;
+  }
+
+  main .hero .hero-content > .btn,
+  main .hero .hero-inner > .btn,
+  main .page-hero .hero-content > .btn,
+  main .page-hero .hero-inner > .btn {
+    min-height: 45px !important;
+    max-width: 100% !important;
+    padding: 13px 17px !important;
+    font-size: 9px !important;
+    letter-spacing: 1px !important;
+  }
+}
+
+@media (max-width: 380px) {
+  main .hero > .container,
+  main .page-hero > .container,
+  main .hero .container.hero-inner,
+  main .hero .container.hero-content,
+  main .page-hero .container.hero-content {
+    width: calc(100% - 36px) !important;
+  }
+
+  main .hero h1,
+  main .page-hero h1 {
+    font-size: clamp(32px, 8.8vw, 38px) !important;
+  }
+}
