@@ -327,7 +327,7 @@
 }
 
 /* MOBILE + TABLET — one breakpoint and one layout everywhere */
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .site-header {
     height: 66px !important;
     min-height: 66px !important;
@@ -521,6 +521,8 @@
     margin: 3px 0 !important;
     font-size: 9px !important;
     line-height: 1.65 !important;
+    max-width: 100% !important;
+    overflow-wrap: anywhere !important;
   }
 
   .site-footer > .footer-bottom {
@@ -530,6 +532,8 @@
     gap: 6px !important;
     padding-top: 10px !important;
     font-size: 8px !important;
+    max-width: 100% !important;
+    overflow-wrap: anywhere !important;
   }
 }
 

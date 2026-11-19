@@ -225,7 +225,177 @@ document.addEventListener("DOMContentLoaded",function(){
 <style id="divit-logo-enhancement-5pct">
 .site-header .brand img, .site-footer .footer-brand img { transform: scale(1.10) !important; transform-origin: left center !important; }
 </style>
-<link rel="stylesheet" href="site-shell.css?v=1">
+<link rel="stylesheet" href="site-shell.css?v=2">
+
+<style id="divit-international-header-alignment">
+/* Match the homepage header proportions and CTA treatment */
+.site-header{height:76px}
+.site-header .brand{width:min(390px,42%);height:66px;flex:0 1 390px}
+.site-header .brand img{max-height:62px;object-fit:contain;object-position:left center}
+.site-header .nav-links>a.nav-cta{padding:10px 14px;border:1px solid var(--gold);color:#87652f}
+</style>
+
+
+<style id="international-cta-standardised">
+/* International page closing CTA — one authoritative desktop/mobile layout */
+section.contact-invitation{
+  width:100% !important;
+  box-sizing:border-box !important;
+  padding:54px 0 !important;
+  min-height:0 !important;
+  background:linear-gradient(120deg,#091426 0%,#14243b 100%) !important;
+  background-image:linear-gradient(120deg,#091426 0%,#14243b 100%) !important;
+}
+section.contact-invitation::before{
+  content:none !important;
+  display:none !important;
+}
+section.contact-invitation .container.contact-content{
+  width:min(1160px,92%) !important;
+  max-width:1160px !important;
+  margin:0 auto !important;
+  padding:0 !important;
+  display:grid !important;
+  grid-template-columns:minmax(0,1fr) auto !important;
+  grid-template-rows:auto auto auto !important;
+  align-items:center !important;
+  justify-items:stretch !important;
+  column-gap:48px !important;
+  row-gap:14px !important;
+  text-align:left !important;
+  box-sizing:border-box !important;
+}
+section.contact-invitation .eyebrow{
+  grid-column:1 !important;
+  grid-row:1 !important;
+  justify-self:start !important;
+  width:100% !important;
+  margin:0 !important;
+  color:#dfc38f !important;
+  text-align:left !important;
+}
+section.contact-invitation h2{
+  grid-column:1 !important;
+  grid-row:2 !important;
+  justify-self:start !important;
+  width:100% !important;
+  max-width:850px !important;
+  margin:0 !important;
+  text-align:left !important;
+  font-size:clamp(32px,3.5vw,45px) !important;
+  line-height:1.12 !important;
+}
+section.contact-invitation h2 em{
+  color:#dfc38f !important;
+  font-style:italic !important;
+}
+section.contact-invitation .contact-content > p:not(.eyebrow){
+  grid-column:1 !important;
+  grid-row:3 !important;
+  justify-self:start !important;
+  width:100% !important;
+  max-width:720px !important;
+  margin:0 !important;
+  text-align:left !important;
+  color:#d0d5dc !important;
+  font-size:14px !important;
+  line-height:1.75 !important;
+}
+section.contact-invitation .btn{
+  grid-column:2 !important;
+  grid-row:2 / 4 !important;
+  justify-self:end !important;
+  align-self:center !important;
+  margin:0 !important;
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap:12px !important;
+  min-height:48px !important;
+  padding:15px 26px !important;
+  white-space:nowrap !important;
+  background:#c9a86a !important;
+  color:#111d30 !important;
+  border:1px solid #c9a86a !important;
+  border-radius:2px !important;
+  font-size:10px !important;
+  font-weight:600 !important;
+  letter-spacing:1.4px !important;
+  line-height:1 !important;
+}
+section.contact-invitation .btn span{
+  color:#111d30 !important;
+  font-size:12px !important;
+}
+section.contact-invitation .btn:hover{
+  background:#dfc38f !important;
+  border-color:#dfc38f !important;
+}
+@media (min-width:701px) and (max-width:1024px){
+  section.contact-invitation .container.contact-content{
+    column-gap:24px !important;
+  }
+  section.contact-invitation h2{
+    font-size:clamp(30px,4vw,38px) !important;
+  }
+  section.contact-invitation .btn{
+    padding:14px 18px !important;
+    font-size:9px !important;
+  }
+}
+@media (max-width:700px){
+  section.contact-invitation{
+    padding:36px 0 40px !important;
+  }
+  section.contact-invitation .container.contact-content{
+    width:calc(100% - 44px) !important;
+    max-width:520px !important;
+    display:flex !important;
+    flex-direction:column !important;
+    align-items:flex-start !important;
+    justify-content:flex-start !important;
+    gap:0 !important;
+    text-align:left !important;
+  }
+  section.contact-invitation .eyebrow{
+    margin:0 0 13px !important;
+    font-size:8px !important;
+    letter-spacing:2px !important;
+  }
+  section.contact-invitation h2{
+    width:100% !important;
+    max-width:420px !important;
+    margin:0 0 13px !important;
+    font-size:clamp(28px,7.5vw,35px) !important;
+    line-height:1.14 !important;
+    letter-spacing:-.3px !important;
+    text-wrap:balance !important;
+  }
+  section.contact-invitation .contact-content > p:not(.eyebrow){
+    width:100% !important;
+    max-width:440px !important;
+    margin:0 !important;
+    font-size:12px !important;
+    line-height:1.75 !important;
+  }
+  section.contact-invitation .btn{
+    align-self:flex-start !important;
+    margin:20px 0 0 !important;
+    min-height:44px !important;
+    padding:14px 20px !important;
+    font-size:9px !important;
+  }
+}
+@media (max-width:360px){
+  section.contact-invitation .container.contact-content{
+    width:calc(100% - 36px) !important;
+  }
+  section.contact-invitation h2{
+    font-size:28px !important;
+  }
+}
+</style>
+
 </head>
 <body>
 <header class="site-header">
@@ -241,7 +411,7 @@ document.addEventListener("DOMContentLoaded",function(){
 <button aria-expanded="false" aria-label="Open Our Journeys menu" class="nav-dropdown-trigger" type="button"><span aria-hidden="true" class="nav-chevron"></span></button>
 <div class="nav-dropdown-menu">
 <a href="domestic-holidays.html">Domestic Journeys</a>
-<a class="active" href="international-holidays.html">International Escapes</a>
+<a href="international-holidays.html" class="active" aria-current="page">International Escapes</a>
 <a href="pilgrimage.html">Pilgrimage Journeys</a>
 <a href="helicopter-yatra.html">Helicopter Yatra</a>
 <a href="group-departures.html">Group Departures</a>
@@ -764,91 +934,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 }
 </style>
-<style id="international-cta-mobile-final">
-/* Mobile-specific CTA composition: compact, readable and deliberately spaced */
-@media (max-width:700px){
-  .contact-invitation{
-    padding:34px 0 36px !important;
-    min-height:0 !important;
-  }
-  .contact-invitation .container.contact-content{
-    width:100% !important;
-    max-width:100% !important;
-    padding-left:22px !important;
-    padding-right:22px !important;
-    margin-left:auto !important;
-    margin-right:auto !important;
-    display:flex !important;
-    flex-direction:column !important;
-    align-items:flex-start !important;
-    gap:0 !important;
-    text-align:left !important;
-  }
-  .contact-invitation .eyebrow{
-    display:block !important;
-    width:100% !important;
-    margin:0 0 13px !important;
-    font-size:8px !important;
-    line-height:1.5 !important;
-    letter-spacing:2px !important;
-    text-align:left !important;
-  }
-  .contact-invitation h2{
-    display:block !important;
-    width:100% !important;
-    max-width:340px !important;
-    margin:0 0 13px !important;
-    font-size:clamp(28px,7.5vw,33px) !important;
-    line-height:1.14 !important;
-    letter-spacing:-.35px !important;
-    font-weight:400 !important;
-    text-align:left !important;
-    text-wrap:balance !important;
-  }
-  .contact-invitation .contact-content > p:not(.eyebrow){
-    display:block !important;
-    width:100% !important;
-    max-width:350px !important;
-    margin:0 !important;
-    font-size:12px !important;
-    line-height:1.75 !important;
-    letter-spacing:0 !important;
-    text-align:left !important;
-  }
-  .contact-invitation .btn{
-    display:inline-flex !important;
-    width:auto !important;
-    min-width:0 !important;
-    min-height:44px !important;
-    margin:21px 0 0 !important;
-    padding:14px 20px !important;
-    align-self:flex-start !important;
-    justify-content:center !important;
-    font-size:9px !important;
-    line-height:1 !important;
-    letter-spacing:1.35px !important;
-  }
-  .contact-invitation .btn span{
-    font-size:12px !important;
-    margin-left:1px !important;
-  }
-  .contact-invitation .contact-links{display:none !important}
-}
-@media (max-width:360px){
-  .contact-invitation .container.contact-content{
-    padding-left:18px !important;
-    padding-right:18px !important;
-  }
-  .contact-invitation h2{
-    font-size:28px !important;
-    max-width:310px !important;
-  }
-  .contact-invitation .contact-content > p:not(.eyebrow){
-    font-size:11.5px !important;
-  }
-}
-</style>
-
 <style id="homepage-footer-css">
 .site-footer{background:#fff;color:var(--ink);border-top:1px solid rgba(184,148,88,.28);padding:25px 0 14px}
 .footer-inner{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:35px;align-items:center;padding-bottom:18px}
@@ -1161,3 +1246,4 @@ section.contact-invitation .contact-invitation-shade{
 .site-header .brand img{max-height:62px;object-fit:contain;object-position:left center}
 .site-header .nav-links>a.nav-cta{padding:10px 14px;border:1px solid var(--gold);color:#87652f}
 </style>
+
