@@ -533,67 +533,91 @@ function renderCards() {
       </div>
     </article>`).join("");
 }
-function renderItinerary(option) {
-  activeOption = option;
-  const d = activeDestination;
-  const title = d[option + "_title"];
-  const days = d[option + "_days"];
-  const route = d[option + "_route"];
-  const items = d[option];
-  document.getElementById("modalDuration").textContent = days;
-  document.getElementById("modalRoute").textContent = "ROUTE  " + route;
-  panel.innerHTML = `<h3>${title}</h3><div class="day-list">${items.map((day, i) => `
+// Destination itinerary interactions follow the same pattern as domestic-holidays.html.
+let current = "";
+let activePlan = 0;
+
+function showPlan(index) {
+  activePlan = index;
+  const destination = activeDestination;
+  const option = index === 0 ? "a" : "b";
+  const items = destination[option];
+
+  document.getElementById("modalDuration").textContent = destination[option + "_days"];
+  document.getElementById("modalRoute").textContent = "ROUTE  " + destination[option + "_route"];
+  panel.innerHTML = `<h3>${destination[option + "_title"]}</h3><div class="day-list">${items.map((day, i) => `
     <article class="day-item">
-      <div class="day-number">${String(i+1).padStart(2,"0")}</div>
+      <div class="day-number">${String(i + 1).padStart(2, "0")}</div>
       <div class="day-copy"><h4>${day[0]}</h4><p>${day[1]}</p><p class="day-highlights">HIGHLIGHTS · ${day[2]}</p></div>
     </article>`).join("")}</div>`;
-  document.querySelectorAll(".itinerary-tab").forEach(tab => {
-    const selected = tab.dataset.itinerary === option;
+
+  document.querySelectorAll(".itinerary-tab").forEach((tab, i) => {
+    const selected = i === index;
     tab.classList.toggle("active", selected);
     tab.setAttribute("aria-selected", String(selected));
   });
+
+  document.getElementById("modalEnquire").href =
+    "https://wa.me/" + phone + "?text=" + encodeURIComponent(
+      "Hello DIVIT LUXE HOLIDAYS, I am interested in " + current + " — " +
+      (index === 0 ? "The Signature Journey" : "The Grand Journey") +
+      " (" + destination[option + "_days"] + "). Please share more details."
+    );
 }
-function openModal(index, trigger) {
-  activeDestination = destinations[index];
-  previousFocus = trigger;
-  document.getElementById("modalImage").src = imageUrl(activeDestination.image,1400);
+
+function openModal(name) {
+  current = name;
+  activePlan = 0;
+  activeDestination = destinations.find(destination => destination.name === name);
+  if (!activeDestination) return;
+
+  document.getElementById("modalImage").src = imageUrl(activeDestination.image, 1400);
   document.getElementById("modalImage").alt = activeDestination.alt;
   document.getElementById("modalTag").textContent = activeDestination.tag;
   document.getElementById("modalTitle").textContent = activeDestination.name;
   document.getElementById("modalRegion").textContent = activeDestination.region;
-  document.getElementById("modalEnquire").href = baseWa;
-  renderItinerary("a");
+  showPlan(0);
+
   backdrop.classList.add("open");
-  backdrop.setAttribute("aria-hidden","false");
+  backdrop.setAttribute("aria-hidden", "false");
   document.body.style.overflow = "hidden";
   document.querySelector(".modal-close").focus();
 }
+
 function closeModal() {
   backdrop.classList.remove("open");
-  backdrop.setAttribute("aria-hidden","true");
+  backdrop.setAttribute("aria-hidden", "true");
   document.body.style.overflow = "";
-  if (previousFocus) previousFocus.focus();
 }
+
 renderCards();
 grid.addEventListener("click", event => {
   const card = event.target.closest(".destination-card");
   if (!card || event.target.closest("a")) return;
   const button = event.target.closest("[data-destination]");
   const index = button ? Number(button.dataset.destination) : Array.from(grid.children).indexOf(card);
-  if (index >= 0) openModal(index, button || card);
+  if (index >= 0 && destinations[index]) openModal(destinations[index].name);
 });
+
 grid.addEventListener("keydown", event => {
   if ((event.key === "Enter" || event.key === " ") && event.target.classList.contains("destination-card")) {
     event.preventDefault();
-    openModal(Array.from(grid.children).indexOf(event.target), event.target);
+    const index = Array.from(grid.children).indexOf(event.target);
+    if (index >= 0 && destinations[index]) openModal(destinations[index].name);
   }
 });
-document.querySelectorAll(".itinerary-tab").forEach(tab => tab.addEventListener("click", () => renderItinerary(tab.dataset.itinerary)));
+
+document.querySelectorAll(".itinerary-tab").forEach((tab, index) => {
+  tab.addEventListener("click", () => showPlan(index));
+});
 document.querySelector(".modal-close").addEventListener("click", closeModal);
-backdrop.addEventListener("click", event => { if (event.target === backdrop) closeModal(); });
+backdrop.addEventListener("click", event => {
+  if (event.target === backdrop) closeModal();
+});
 document.addEventListener("keydown", event => {
   if (event.key === "Escape" && backdrop.classList.contains("open")) closeModal();
 });
+
 const menuToggle = document.querySelector(".menu-toggle");
 const nav = document.querySelector(".nav-links");
 menuToggle.addEventListener("click", () => {
